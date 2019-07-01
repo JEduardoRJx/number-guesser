@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  background-color: #404041;
+
+}
+
+h1 {
+  font-weight: 300;
+  color: #DD1972;
+  margin:0;
+}
+
+span {
+  font-weight: 700;
+}
+
+h3 {
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0;
+}
