@@ -23,3 +23,17 @@ h3 {
   font-weight: 300;
   margin: 0;
 }
+
+.light-section {
+  background-color: #F7F7F7;
+}
+
+
+.dark-section {
+  background-color: #404041;
+}
+
+.form-title {
+  color: #6E6E6E;
+  font-weight: 700;
+}
