@@ -9,13 +9,14 @@ body {
 
 header {
   background-color: #404041;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/*main {
+main {
   display: flex;
-  flex-direction: row;
-}*/
+}
 
 section {
   /*display: flex;*/
