@@ -54,3 +54,38 @@ h3 {
   color: #6E6E6E;
   font-weight: 700;
 }
+
+.range-update-button {
+  background-color: #6E6E6E;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+ /* padding: 5px;*/
+}
+
+.submit-guess-button {
+  background-color: #6E6E6E;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  /*padding: 5px;*/
+
+}
+
+.reset-game-button {
+  background-color: #6E6E6E;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+/*  padding: 5px;*/
+
+}
+
+.clear-game-button {
+  background-color: #6E6E6E;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  /*padding: 5px;*/
+
+}
