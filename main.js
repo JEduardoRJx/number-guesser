@@ -11,7 +11,7 @@ var submitGuessButton = document.querySelector('.submit-guess-button');
 var resetGameButton = document.querySelector('.reset-game-button');
 var clearGameButton = document.querySelector('.clear-game-button');
 var firstChallengerName = document.querySelector('.challenger-1-name');
-var firstChallegerGuess = document.querySelector('.challenger-1-guess');
+var firstChallengerGuess = document.querySelector('.challenger-1-guess');
 var secondChallengerName = document.querySelector('.challenger-2-name');
 var secondChallengerGuess = document.querySelector('.challenger-2-guess');
 
@@ -24,11 +24,16 @@ rangeUpdateButton.addEventListener('click', function () {
 });
 
 submitGuessButton.addEventListener('click', function () {
-  NewFirstChallengerNameInput = firstChallengerName.value;
-  firstChallengerName.innertext = NewFirstChallengerNameInput;
+  NewFirstChallengerNameInput = firstChallengerNameInput.value;
+  firstChallengerName.innerText = NewFirstChallengerNameInput;
+  NewFirstChallengerGuessInput = firstChallengerGuessInput.value;
+  firstChallengerGuess.innerText = NewFirstChallengerGuessInput;
 
-  NewFirstChallengerGuessInput = firstChallengerGuessInput;
-  firstChallegerGuess.innerText = NewFirstChallengerGuessInput;
+  NewSecondChallengerNameInput = secondChallengerNameInput.value;
+  secondChallengerName.innerText = NewSecondChallengerNameInput;
+  NewSecondChallengerGuessInput = secondChallengerGuessInput.value;
+  secondChallengerGuess.innerText = NewSecondChallengerGuessInput;
+
 })
 
 
