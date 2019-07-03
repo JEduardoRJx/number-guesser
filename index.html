@@ -1,4 +1,3 @@
-    
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,29 +14,41 @@
         <form>
           <h3 class="form-title">Set Range</h3>
           <label>Min Range</label>
-          <input></input>
+          <input class="min-range"></input>
           <label>Max Range</label>
-          <input></input>
-          <button>UPDATE</button>
+          <input class="max-range"></input>
+          <button class="range-update-button" type="button">UPDATE</button>
         </form>
       </article>
       <article>
-        <p>The Current Range is 1 to 100</p>
+        <p>The Current Range is <span class="min-span">1</span> to <span class="max-span">100</span></p>
         <h3 class="form-title">Challenger 1</h3>
           <label>Name</label>
-          <input></input>
+          <input class="challenger-1-name-input" type="text"></input>
           <label>Guess</label>
-          <input></input>
+          <input class="challenger-1-guess-input" type="number"></input>
         <h3 class="form-title">Challenger 2</h3>
-          <label>Name</label>
-          <input></input>
+          <label >Name</label>
+          <input class="challenger-2-name-input" type="text"></input>
           <label>Guess</label>
-          <input></input>          
-          <button>UPDATE</button>
-          <button>UPDATE</button>
-          <button>UPDATE</button>
+          <input class="challenger-2-guess-input" type="number"></input>          
+          <button class ="submit-guess-button" type="button">SUBMIT GUESS</button>
+          <button class="reset-game-button" type="button">RESET GAME</button>
+          <button class="clear-game-button" type="button">CLEAR GAME</button>
       </article>
-      <article></article>
+      <article>
+        <h3 class="form-title">Latest Score</h3>
+          <!-- Challenger 1 Name -->
+          <h4 class="challenger-1-name">Name</h4>
+          <p>current guess</p>
+          <p class="challenger-1-guess">97</p>
+          <p>that's too high</p>
+          <!-- Challenger 2 Name -->
+          <h4 class="challenger-2-name">Challenger 1 Name</h4>
+          <p>current guess</p>
+          <p class="challenger-2-guess">3</p>
+          <p>that's too low</p>
+      </article>
     </section>
     <section class="dark-section">
       <article></article>
@@ -45,4 +56,5 @@
       <article></article>
     </section>
   </main>
+  <script type="text/javascript" src="main.js"></script>
 </html>
