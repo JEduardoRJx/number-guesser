@@ -3,11 +3,28 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 header {
   background-color: #404041;
 
 }
 
+/*main {
+  display: flex;
+  flex-direction: row;
+}*/
+
+section {
+  /*display: flex;*/
+  width:50%;
+}
+
+article {
+
+}
 h1 {
   font-weight: 300;
   color: #DD1972;
