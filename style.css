@@ -96,3 +96,24 @@ h3 {
   border: 1px #D0D2D3;
   padding:5px 10px 5px 10px;
 }
+
+.challenger-1-guess {
+  color: #DD1972;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.challenger-2-guess {
+  color: #DD1972;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.range-article {
+}
+
+.challenger-article {
+}
+
+.results-article {
+}
