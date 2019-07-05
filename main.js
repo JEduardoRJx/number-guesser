@@ -3,6 +3,8 @@ var maxRange = document.querySelector('.max-range');
 var rangeUpdateButton = document.querySelector('.range-update-button');
 var minSpan = document.querySelector('.min-span');
 var maxSpan = document.querySelector('.max-span');
+var newMinRangeTest = parseInt(minRange.value);
+var newMaxRangeTest = parseInt(maxRange.value);
 var firstChallengerNameInput = document.querySelector('.challenger-1-name-input');
 var firstChallengerGuessInput = document.querySelector('.challenger-1-guess-input');
 var secondChallengerNameInput = document.querySelector('.challenger-2-name-input');
@@ -17,24 +19,28 @@ var secondChallengerGuess = document.querySelector('.challenger-2-guess');
 var rangeForm = document.querySelector('.range-form');
 var challengerArticle = document.querySelector('.challenger-article');
 var challengerForm = document.querySelector('.challenger-form');
-// var randomNumber = Math.floor(Math.random() * newMaxRange)
+var randomNumber = Math.floor(Math.random() * (
+100 - 1) + 1);
 
 rangeUpdateButton.addEventListener('click', function () {
   var newMinRange = parseInt(minRange.value);
   var newMaxRange = parseInt(maxRange.value);
   minSpan.innerText = newMinRange;
   maxSpan.innerText = newMaxRange;
+  randomNumber = Math.floor(Math.random() * (
+parseInt(maxRange.value) - parseInt(minRange.value)) + 
+parseInt(minRange.value));
 });
 
 submitGuessButton.addEventListener('click', function () {
-  var NewFirstChallengerNameInput = firstChallengerNameInput.value;
-  var NewFirstChallengerGuessInput = firstChallengerGuessInput.value;
-  var NewSecondChallengerNameInput = secondChallengerNameInput.value;
-  var NewSecondChallengerGuessInput = secondChallengerGuessInput.value;
-  firstChallengerName.innerText = NewFirstChallengerNameInput;
-  firstChallengerGuess.innerText = NewFirstChallengerGuessInput;
-  secondChallengerName.innerText = NewSecondChallengerNameInput;
-  secondChallengerGuess.innerText = NewSecondChallengerGuessInput;
+  var newFirstChallengerNameInput = firstChallengerNameInput.value;
+  var newFirstChallengerGuessInput = firstChallengerGuessInput.value;
+  var newSecondChallengerNameInput = secondChallengerNameInput.value;
+  var newSecondChallengerGuessInput = secondChallengerGuessInput.value;
+  firstChallengerName.innerText = newFirstChallengerNameInput;
+  firstChallengerGuess.innerText = newFirstChallengerGuessInput;
+  secondChallengerName.innerText = newSecondChallengerNameInput;
+  secondChallengerGuess.innerText = newSecondChallengerGuessInput;
 });
 
 clearGameButton.addEventListener('click', function () {
