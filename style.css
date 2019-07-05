@@ -12,6 +12,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0px;
 }
 
 main {
@@ -39,11 +40,14 @@ span {
 h3 {
   color: #ffffff;
   font-weight: 300;
-  margin: 0;
+  /*margin: 0;*/
+  margin: 5px;
 }
 
 .light-section {
   background-color: #F7F7F7;
+  margin: 0px;
+  padding: 5px;
 }
 
 
