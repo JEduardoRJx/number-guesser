@@ -9,14 +9,15 @@ body {
 
 header {
   background-color: #404041;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0px;
-
 }
 
-/*main {
+main {
   display: flex;
-  flex-direction: row;
-}*/
+}
 
 section {
   /*display: flex;*/
@@ -75,9 +76,6 @@ h3 {
   font-weight: bold;
   border: 1px #6E6E6E;
  padding:5px 10px 5px 10px;
-
-
-
 }
 
 .reset-game-button {
@@ -87,8 +85,6 @@ h3 {
   font-weight: bold;
   border: 1px #D0D2D3;
   padding:5px 10px 5px 10px;
-
-
 }
 
 .clear-game-button {
