@@ -14,28 +14,22 @@ var firstChallengerName = document.querySelector('.challenger-1-name');
 var firstChallengerGuess = document.querySelector('.challenger-1-guess');
 var secondChallengerName = document.querySelector('.challenger-2-name');
 var secondChallengerGuess = document.querySelector('.challenger-2-guess');
+// var randomNumber = Math.floor(Math.random() * newMaxRange)
 
 rangeUpdateButton.addEventListener('click', function () {
-  NewMinRange = minRange.value;
-  minSpan.innerText = NewMinRange;
-
-  NewMaxRange = maxRange.value;
-  maxSpan.innerText = NewMaxRange;
+  var newMinRange = parseInt(minRange.value);
+  var newMaxRange = parseInt(maxRange.value);
+  minSpan.innerText = newMinRange;
+  maxSpan.innerText = newMaxRange;
 });
 
 submitGuessButton.addEventListener('click', function () {
-  NewFirstChallengerNameInput = firstChallengerNameInput.value;
+  var NewFirstChallengerNameInput = firstChallengerNameInput.value;
+  var NewFirstChallengerGuessInput = firstChallengerGuessInput.value;
+  var NewSecondChallengerNameInput = secondChallengerNameInput.value;
+  var NewSecondChallengerGuessInput = secondChallengerGuessInput.value;
   firstChallengerName.innerText = NewFirstChallengerNameInput;
-  NewFirstChallengerGuessInput = firstChallengerGuessInput.value;
   firstChallengerGuess.innerText = NewFirstChallengerGuessInput;
-
-  NewSecondChallengerNameInput = secondChallengerNameInput.value;
   secondChallengerName.innerText = NewSecondChallengerNameInput;
-  NewSecondChallengerGuessInput = secondChallengerGuessInput.value;
   secondChallengerGuess.innerText = NewSecondChallengerGuessInput;
-
-})
-
-
-//Make a variable that stores a random number
-var randomNumber = Math.floor(Math.random(minRange.value) )
+});
