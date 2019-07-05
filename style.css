@@ -9,6 +9,7 @@ body {
 
 header {
   background-color: #404041;
+  margin: 0px;
 
 }
 
@@ -38,11 +39,13 @@ span {
 h3 {
   color: #ffffff;
   font-weight: 300;
-  margin: 0;
+  margin: 5px;
 }
 
 .light-section {
   background-color: #F7F7F7;
+  margin: 0px;
+  padding: 5px;
 }
 
 
@@ -95,4 +98,40 @@ h3 {
   font-weight: bold;
   border: 1px #D0D2D3;
   padding:5px 10px 5px 10px;
+}
+
+.challenger-1-guess {
+  color: #DD1972;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.challenger-2-guess {
+  color: #DD1972;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.range-article {
+  background-color: white;
+  border: 1px thick #F7F7F7;
+  margin: 10px 10px 10px 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.challenger-article {
+  background-color: white;
+  border: 1px thick #F7F7F7;
+  margin: 10px 10px 10px 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.results-article {
+  background-color: white;
+  border: 1px thick #F7F7F7;
+  margin: 10px 10px 10px 10px;
+  margin: 10px;
+  padding: 10px;
 }
