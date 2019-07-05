@@ -3,6 +3,8 @@ var maxRange = document.querySelector('.max-range');
 var rangeUpdateButton = document.querySelector('.range-update-button');
 var minSpan = document.querySelector('.min-span');
 var maxSpan = document.querySelector('.max-span');
+var newMinRangeTest = parseInt(minRange.value);
+var newMaxRangeTest = parseInt(maxRange.value);
 var firstChallengerNameInput = document.querySelector('.challenger-1-name-input');
 var firstChallengerGuessInput = document.querySelector('.challenger-1-guess-input');
 var secondChallengerNameInput = document.querySelector('.challenger-2-name-input');
@@ -21,13 +23,13 @@ var challengerOneResult = document.querySelector('.challenger-1-result');
 var challengerTwoResult = document.querySelector('.challenger-2-result');
 var randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
 
+
 rangeUpdateButton.addEventListener('click', function () {
   var newMinRange = parseInt(minRange.value);
   var newMaxRange = parseInt(maxRange.value);
   minSpan.innerText = newMinRange;
   maxSpan.innerText = newMaxRange;
-  randomNumber = Math.floor(Math.random() * (
-  parseInt(maxRange.value) - parseInt(minRange.value)) + 
+  randomNumber = Math.floor(Math.random() * (parseInt(maxRange.value) - parseInt(minRange.value)) + 
   parseInt(minRange.value));
 });
 
@@ -54,16 +56,6 @@ clearGameButton.addEventListener('click', function () {
   minSpan.innerText = "0";
   maxSpan.innerText = "0";
 });
-
-// function disableClearButton() { 
-//   if (minRange.value.length > 0) {
-//   clearGameButton.disabled = false;
-// } else {
-//   clearGameButton.disabled = true;
-//   }
-// };
-
-// disableClearButton ();
 
 function displayResultsOne() {
   if (parseInt(firstChallengerGuessInput.value) > randomNumber) {
