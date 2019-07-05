@@ -33,8 +33,7 @@ submitGuessButton.addEventListener('click', function () {
   secondChallengerName.innerText = NewSecondChallengerNameInput;
   NewSecondChallengerGuessInput = secondChallengerGuessInput.value;
   secondChallengerGuess.innerText = NewSecondChallengerGuessInput;
-
-})
+});
 
 
 //Make a variable that stores a random number
