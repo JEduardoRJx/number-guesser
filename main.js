@@ -14,6 +14,9 @@ var firstChallengerName = document.querySelector('.challenger-1-name');
 var firstChallengerGuess = document.querySelector('.challenger-1-guess');
 var secondChallengerName = document.querySelector('.challenger-2-name');
 var secondChallengerGuess = document.querySelector('.challenger-2-guess');
+var rangeForm = document.querySelector('.range-form');
+var challengerArticle = document.querySelector('.challenger-article');
+var challengerForm = document.querySelector('.challenger-form');
 // var randomNumber = Math.floor(Math.random() * newMaxRange)
 
 rangeUpdateButton.addEventListener('click', function () {
@@ -32,4 +35,26 @@ submitGuessButton.addEventListener('click', function () {
   firstChallengerGuess.innerText = NewFirstChallengerGuessInput;
   secondChallengerName.innerText = NewSecondChallengerNameInput;
   secondChallengerGuess.innerText = NewSecondChallengerGuessInput;
+});
+
+clearGameButton.addEventListener('click', function () {
+  rangeForm.reset();
+  challengerForm.reset();
+  firstChallengerName.innerText = " ";
+  firstChallengerGuess.innerText = " ";
+  secondChallengerName.innerText = " ";
+  secondChallengerGuess.innerText = " ";
+  minSpan.innerText = "0";
+  maxSpan.innerText = "0";
+});
+
+resetGameButton.addEventListener('click', function () {
+  rangeForm.reset();
+  challengerForm.reset();
+  firstChallengerName.innerText = " ";
+  firstChallengerGuess.innerText = " ";
+  secondChallengerName.innerText = " ";
+  secondChallengerGuess.innerText = " ";
+  minSpan.innerText = "0";
+  maxSpan.innerText = "0";
 });
