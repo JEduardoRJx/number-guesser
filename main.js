@@ -22,46 +22,88 @@ var challengerForm = document.querySelector('.challenger-form');
 var challengerOneResult = document.querySelector('.challenger-1-result');
 var challengerTwoResult = document.querySelector('.challenger-2-result');
 var randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
+var input = document.querySelectorAll('input');
 
+window.onload = function() {
+  offClearGameButton();
+  offResetGameButton();
+};
+ 
+for (i=0; i < input.length; i++) {
+  input[i].addEventListener('keyup', function () {
+  onClearGameButton();
+  offResetGameButton();
+  });
+};
+
+function offClearGameButton() { 
+  clearGameButton.disabled = true
+}
+
+function onClearGameButton() {
+  clearGameButton.disabled = false
+}
+
+function offResetGameButton() {
+  resetGameButton.disabled = true
+}
+
+function onResetGameButton() {
+  resetGameButton.disabled = flase
+}
 
 rangeUpdateButton.addEventListener('click', function () {
   var newMinRange = parseInt(minRange.value);
   var newMaxRange = parseInt(maxRange.value);
   minSpan.innerText = newMinRange;
   maxSpan.innerText = newMaxRange;
-  randomNumber = Math.floor(Math.random() * (parseInt(maxRange.value) - parseInt(minRange.value)) + 
+  randomNumber = Math.floor(Math.random() * (
+  parseInt(maxRange.value) - parseInt(minRange.value)) + 
   parseInt(minRange.value));
 });
 
 submitGuessButton.addEventListener('click', function () {
-  var NewFirstChallengerNameInput = firstChallengerNameInput.value;
-  var NewFirstChallengerGuessInput = firstChallengerGuessInput.value;
-  var NewSecondChallengerNameInput = secondChallengerNameInput.value;
-  var NewSecondChallengerGuessInput = secondChallengerGuessInput.value;
-  firstChallengerName.innerText = NewFirstChallengerNameInput;
-  firstChallengerGuess.innerText = NewFirstChallengerGuessInput;
-  secondChallengerName.innerText = NewSecondChallengerNameInput;
-  secondChallengerGuess.innerText = NewSecondChallengerGuessInput;
-  displayResultsOne ();
-  displayResultsTwo ();
+  var newFirstChallengerNameInput = firstChallengerNameInput.value;
+  var newFirstChallengerGuessInput = firstChallengerGuessInput.value;
+  var newSecondChallengerNameInput = secondChallengerNameInput.value;
+  var newSecondChallengerGuessInput = secondChallengerGuessInput.value;
+  firstChallengerName.innerText = newFirstChallengerNameInput;
+  firstChallengerGuess.innerText = newFirstChallengerGuessInput;
+  secondChallengerName.innerText = newSecondChallengerNameInput;
+  secondChallengerGuess.innerText = newSecondChallengerGuessInput;
+  displayResultsOne();
+  displayResultsTwo();
 });
 
 clearGameButton.addEventListener('click', function () {
   rangeForm.reset();
   challengerForm.reset();
-  firstChallengerName.innerText = " ";
-  firstChallengerGuess.innerText = " ";
-  secondChallengerName.innerText = " ";
-  secondChallengerGuess.innerText = " ";
-  minSpan.innerText = "0";
-  maxSpan.innerText = "0";
+  firstChallengerName.innerText = "Challenger 1 Name";
+  firstChallengerGuess.innerText = "0";
+  secondChallengerName.innerText = "Challenger 2 Name";
+  secondChallengerGuess.innerText = "0";
+  minSpan.innerText = "1";
+  maxSpan.innerText = "100";
+  offClearGameButton();
+});
+
+resetGameButton.addEventListener('click', function () {
+  rangeForm.reset();
+  challengerForm.reset();
+  firstChallengerName.innerText = "Challenger 1 Name";
+  firstChallengerGuess.innerText = "0";
+  secondChallengerName.innerText = "Challeger 2 Name";
+  secondChallengerGuess.innerText = "0";
+  minSpan.innerText = "1";
+  maxSpan.innerText = "100";
+  offResetGameButton();
 });
 
 function displayResultsOne() {
   if (parseInt(firstChallengerGuessInput.value) > randomNumber) {
     challengerOneResult.innerText = "that's too high";
   } else if (parseInt(firstChallengerGuessInput.value) < randomNumber) {
-      challengerOneResult.innerText = "that's too low";
+    challengerOneResult.innerText = "that's too low";
   } else {
     challengerOneResult.innerText = "BOOM!";
   }
@@ -71,20 +113,8 @@ function displayResultsTwo() {
   if (parseInt(secondChallengerGuessInput.value) > randomNumber) {
     challengerTwoResult.innerText = "that's too high";
   } else if (parseInt(secondChallengerGuessInput.value) < randomNumber) {
-      challengerTwoResult.innerText = "that's too low";
+    challengerTwoResult.innerText = "that's too low";
   } else {
     challengerTwoResult.innerText = "BOOM!";
   }
 };
-
-resetGameButton.addEventListener('click', function () {
-  rangeForm.reset();
-  challengerForm.reset();
-  firstChallengerName.innerText = " ";
-  firstChallengerGuess.innerText = " ";
-  secondChallengerName.innerText = " ";
-  secondChallengerGuess.innerText = " ";
-  minSpan.innerText = "1";
-  maxSpan.innerText = "100";
-  randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
-});
