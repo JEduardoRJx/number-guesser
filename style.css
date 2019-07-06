@@ -66,6 +66,9 @@ span {
 
 h3 {
   /*background-color: red;*/
+  color: #ffffff;
+  font-weight: 300;
+  margin: 5px;
 }
 
 .light-section {
