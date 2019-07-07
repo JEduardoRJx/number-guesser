@@ -80,6 +80,12 @@ article {
 
 .range-article {
   background-color: white;
+
+h3 {
+  /*background-color: red;*/
+  color: #ffffff;
+  font-weight: 300;
+  margin: 5px;
 }
 
 .form-title {
