@@ -16,8 +16,7 @@ header {
 }
 
 .header-section {
-  margin-bottom: 2%;
-  margin-top: 1%;
+  margin: 1% 0;
   text-align: center;
   width: 350px;
 }
@@ -27,6 +26,10 @@ h1 {
   color: #DD1972;
   font-size: 40px;
   margin: -6px;
+}
+
+span {
+  font-weight: 700;
 }
 
 .h3-header {
@@ -50,38 +53,56 @@ main {
 }
 
 section {
+  padding: 10px;
   width:50%;
-}
-
-article {
-
-}
-
-
-span {
-  font-weight: 700;
-}
-
-
-
-h3 {
-  /*background-color: red;*/
 }
 
 .light-section {
   background-color: #F7F7F7;
-  margin: 0px;
-  padding: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 
 .dark-section {
-  background-color: #404041;
+  background-color: #D1D2D4;
+}
+
+article {
+  padding: 10px;
+}
+
+.light-article,
+.min-range,
+.max-range {
+  border: 1px solid #ECECEC;
+}
+
+.range-article {
+  background-color: white;
 }
 
 .form-title {
   color: #6E6E6E;
   font-weight: 700;
+  margin: 0px;
+  font-size: 16px;
+}
+
+.range-form {
+  display: flex;
+  flex-direction: row;
+  color: #6E6E6E;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.max-range-div {
+  margin: 0 auto;
 }
 
 .range-update-button {
@@ -90,8 +111,10 @@ h3 {
   color: white;
   font-weight: bold;
   border: 1px #6E6E6E;
-  padding:5px 10px 5px 10px;
-
+  padding: 0 5%;
+  margin-top: auto;
+  margin-left: auto;
+  height: 22px;
 }
 
 .submit-guess-button {
@@ -133,26 +156,58 @@ h3 {
   font-weight: bold;
 }
 
-.range-article {
-  background-color: white;
-  border: 1px thick #F7F7F7;
-  margin: 10px 10px 10px 10px;
-  margin: 10px;
-  padding: 10px;
-}
-
 .challenger-article {
   background-color: white;
-  border: 1px thick #F7F7F7;
-  margin: 10px 10px 10px 10px;
-  margin: 10px;
-  padding: 10px;
+  margin: 10px 0px;
 }
 
 .results-article {
   background-color: white;
-  border: 1px thick #F7F7F7;
-  margin: 10px 10px 10px 10px;
-  margin: 10px;
-  padding: 10px;
+}
+
+/*Playing & testing these for now*/
+@media screen and (max-width: 750px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+    section {
+    width: 100%;
+  } 
+
+  .range-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.max-range-div {
+  margin: 0px;
+}
+
+.range-update-button {
+  background-color: #6E6E6E;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  border: 1px #6E6E6E;
+  padding: 0 15px;
+  margin-top: 5px;
+  margin-right: auto;
+  margin-left: 0;
+  height: 22px;
+
+}
+
+/*    div {
+    background-color: red;
+    display:flex;
+    flex-direction: column;
+  }
+
+  .range-article{
+
+  }
+  .dark-section {
+    background-color: green;
+  }*/
 }
