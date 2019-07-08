@@ -101,6 +101,7 @@ h3 {
   margin: 0px;
   font-size: 16px;
   margin:0px;
+  margin-top: 12px;
 }
 
 .range-form {
@@ -156,7 +157,6 @@ p {
   display: flex;
   flex-direction: row;
   color: #6E6E6E;
-  
 }
 
 .name-div {
@@ -170,14 +170,8 @@ p {
 .button-div {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;  
-}
-
-.challenger-form {
-  display: flex;
-  flex-direction: row;
-  color: #6E6E6E;
-  
+  justify-content: space-between;
+  margin-top: 20px; 
 }
 
 .name-div {
@@ -286,4 +280,66 @@ p {
 
 .results-article {
   background-color: white;
+<<<<<<< HEAD
+}
+
+/*Playing & testing these for now*/
+@media screen and (max-width: 750px) {
+  main {
+    display: flex;
+    flex-direction: column;
   }
+    section {
+    width: 100%;
+  } 
+
+  .range-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.max-range-div {
+  margin: 0px;
+}
+
+.range-update-button {
+  background-color: #6E6E6E;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  border: 1px #6E6E6E;
+  padding: 0 15px;
+  margin-top: 5px;
+  margin-right: auto;
+  margin-left: 0;
+  height: 22px;
+
+}
+
+.challenger-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-div {
+  width: 100%;
+}
+
+.guess-div {
+  margin: 0px;
+}
+
+/*    div {
+    background-color: red;
+    display:flex;
+    flex-direction: column;
+  }
+  .range-article{
+  }
+  .dark-section {
+    background-color: green;
+  }*/
+}
+=======
+  }
+>>>>>>> a60d1b0ac656abd957089e242599373c07f37730
