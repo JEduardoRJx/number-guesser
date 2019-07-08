@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
@@ -16,10 +17,10 @@ header {
 }
 
 .header-section {
-  margin-bottom: 2%;
-  margin-top: 1%;
+  margin: 1% 0;
   text-align: center;
   width: 350px;
+  padding: 0px;
 }
 
 h1 {
@@ -27,6 +28,10 @@ h1 {
   color: #DD1972;
   font-size: 40px;
   margin: -6px;
+}
+
+span {
+  font-weight: 700;
 }
 
 .h3-header {
@@ -41,7 +46,7 @@ h1 {
 .h3-header:after {
   content: "";
   flex: 1 1;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #FFFFFF;
   margin: auto 2%;
 }
 
@@ -50,38 +55,69 @@ main {
 }
 
 section {
+  padding: 10px;
   width:50%;
-}
-
-article {
-
-}
-
-
-span {
-  font-weight: 700;
-}
-
-
-
-h3 {
-  /*background-color: red;*/
 }
 
 .light-section {
   background-color: #F7F7F7;
-  margin: 0px;
-  padding: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .dark-section {
-  background-color: #404041;
+  background-color: #D1D2D4;
+}
+
+article {
+  padding: 10px;
+}
+
+.light-article,
+.min-range,
+.max-range,
+.challenger-1-name-input,
+.challenger-1-guess-input,
+.challenger-2-name-input,
+.challenger-2-guess-input {
+  border: 1px solid #ECECEC;
+}
+
+.range-article {
+  background-color: white;
+
+h3 {
+  /*background-color: red;*/
+  color: #ffffff;
+  font-weight: 300;
+  margin: 5px;
 }
 
 .form-title {
   color: #6E6E6E;
   font-weight: 700;
+  margin: 0px;
+  font-size: 16px;
+}
+
+.range-form {
+  display: flex;
+  flex-direction: row;
+  color: #6E6E6E;
+}
+
+input {
+  height: 25px;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.max-range-div {
+  margin: 0 auto;
 }
 
 .range-update-button {
@@ -90,8 +126,52 @@ h3 {
   color: white;
   font-weight: bold;
   border: 1px #6E6E6E;
-  padding:5px 10px 5px 10px;
+  padding: 0 5%;
+  margin-top: auto;
+  margin-left: auto;
+  height: 25px;
+}
 
+/*Challengers Article*/
+.challenger-article {
+  background-color: white;
+  margin: 10px 0px;
+}
+
+p {
+  color: #6E6E6E;
+  margin: 0px;
+  font-size: 14px;
+}
+
+.min-span,
+.max-span {
+  text-decoration: underline;
+}
+
+.form-title {
+
+}
+
+.challenger-form {
+  display: flex;
+  flex-direction: row;
+  color: #6E6E6E;
+  
+}
+
+.name-div {
+  width: 70%;
+}
+
+.guess-div {
+  margin-left: 5%;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;  
 }
 
 .submit-guess-button {
@@ -100,7 +180,8 @@ h3 {
   color: white;
   font-weight: bold;
   border: 1px #6E6E6E;
- padding:5px 10px 5px 10px;
+  height: 25px;
+  width: 30%;
 }
 
 .reset-game-button {
@@ -109,8 +190,9 @@ h3 {
   color: white;
   font-weight: bold;
   border: 1px #D0D2D3;
-  padding:5px 10px 5px 10px;
-}
+  height: 25px;
+  width: 30%;
+  }
 
 .clear-game-button {
   background-color: #D0D2D3;
@@ -118,7 +200,8 @@ h3 {
   color: white;
   font-weight: bold;
   border: 1px #D0D2D3;
-  padding:5px 10px 5px 10px;
+  height: 25px;
+  width: 30%;
 }
 
 .challenger-1-guess {
@@ -133,26 +216,52 @@ h3 {
   font-weight: bold;
 }
 
-.range-article {
-  background-color: white;
-  border: 1px thick #F7F7F7;
-  margin: 10px 10px 10px 10px;
-  margin: 10px;
-  padding: 10px;
-}
-
-.challenger-article {
-  background-color: white;
-  border: 1px thick #F7F7F7;
-  margin: 10px 10px 10px 10px;
-  margin: 10px;
-  padding: 10px;
-}
 
 .results-article {
   background-color: white;
-  border: 1px thick #F7F7F7;
-  margin: 10px 10px 10px 10px;
-  margin: 10px;
-  padding: 10px;
+}
+
+/*Playing & testing these for now*/
+@media screen and (max-width: 80px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+    section {
+    width: 100%;
+  } 
+
+  .range-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/*.max-range-div {
+  margin: 0px;
+}
+
+.range-update-button {
+  background-color: #6E6E6E;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  border: 1px #6E6E6E;
+  padding: 0 15px;
+  margin-top: 5px;
+  margin-right: auto;
+  margin-left: 0;
+  height: 22px;
+
+}*/
+
+/*    div {
+    background-color: red;
+    display:flex;
+    flex-direction: column;
+  }
+  .range-article{
+  }
+  .dark-section {
+    background-color: green;
+  }*/
 }
