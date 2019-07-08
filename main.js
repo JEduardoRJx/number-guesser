@@ -22,34 +22,34 @@ var challengerForm = document.querySelector('.challenger-form');
 var challengerOneResult = document.querySelector('.challenger-1-result');
 var challengerTwoResult = document.querySelector('.challenger-2-result');
 var randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
-var input = document.querySelectorAll('input');
+var inputs = document.querySelectorAll('input');
 
 window.onload = function() {
   offClearGameButton();
   offResetGameButton();
 };
  
-for (i=0; i < input.length; i++) {
-  input[i].addEventListener('keyup', function () {
+for (i=0; i < inputs.length; i++) {
+  inputs[i].addEventListener('keyup', function () {
   onClearGameButton();
-  offResetGameButton();
+  onResetGameButton();
   });
 };
 
 function offClearGameButton() { 
-  clearGameButton.disabled = true
+  clearGameButton.disabled = true;
 }
 
 function onClearGameButton() {
-  clearGameButton.disabled = false
+  clearGameButton.disabled = false;
 }
 
 function offResetGameButton() {
-  resetGameButton.disabled = true
+  resetGameButton.disabled = true;
 }
 
 function onResetGameButton() {
-  resetGameButton.disabled = flase
+  resetGameButton.disabled = false;
 }
 
 rangeUpdateButton.addEventListener('click', function () {
