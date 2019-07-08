@@ -125,15 +125,19 @@ div {
 }
 
 .range-update-button {
-  background-color: #6E6E6E;
+  background-color: #D0D2D3;
   border-radius: 25px;
   color: white;
   font-weight: bold;
-  border: 1px #6E6E6E;
+  border: none;
   padding: 0 5%;
   margin-top: auto;
   margin-left: auto;
   height: 25px;
+}
+
+.range-update-button:hover {
+  background-color: #6E6E6E;
 }
 
 /*Challengers Article*/
@@ -189,13 +193,16 @@ p {
 }
 
 .submit-guess-button {
-  background-color: #6E6E6E;
+  background-color: #D0D2D3;
   border-radius: 25px;
   color: white;
   font-weight: bold;
   border: 1px #6E6E6E;
   height: 25px;
   width: 30%;
+}
+.submit-guess-button:hover {
+  background-color: #6E6E6E;
 }
 
 .reset-game-button {
@@ -208,6 +215,14 @@ p {
   width: 30%;
   }
 
+.reset-game-button:hover {
+  background-color: #6E6E6E;
+}
+
+.reset-game-button:disabled {
+  background-color: #D0D2D3;
+}
+
 .clear-game-button {
   background-color: #D0D2D3;
   border-radius: 25px;
@@ -216,6 +231,14 @@ p {
   border: 1px #D0D2D3;
   height: 25px;
   width: 30%;
+}
+
+.clear-game-button:hover {
+  background-color: #6E6E6E;
+}
+
+.clear-game-button:disabled {
+  background-color: #D0D2D3;
 }
 
 .challenger-1-guess {
