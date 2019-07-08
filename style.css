@@ -90,13 +90,12 @@ article {
 
 h3 {
   /*background-color: red;*/
-  color: #ffffff;
   font-weight: 300;
   margin: 5px;
 }
 
 .form-title {
-  color: #6E6E6E;
+  color: #606060;
   font-weight: 700;
   margin: 0px;
   font-size: 16px;
@@ -151,6 +150,7 @@ p {
 .min-span,
 .max-span {
   text-decoration: underline;
+  color: #606060;
 }
 
 .challenger-form {
@@ -234,6 +234,26 @@ p {
   background-color: white;
 }
 
+.c1-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.c2-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h4 {
+  color: #6E6E6E;
+}
+
 /*Playing & testing these for now*/
 @media screen and (max-width: 800px) {
   main {
@@ -266,6 +286,7 @@ p {
   height: 22px;
 
 }
+
 
 /*    div {
     background-color: red;
@@ -328,6 +349,12 @@ p {
 .guess-div {
   margin: 0px;
 }
+
+.c-container {
+  display: flex;
+  flex-direction: column;
+}
+
 
 /*    div {
     background-color: red;
