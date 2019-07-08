@@ -10,10 +10,8 @@
       <h3 class="h3-header">ULTIMATE CHALLEGER EDITION</h3>
     </section>
   </header>
-
   <main>
     <section class="light-section">
-      
       <article class = "range-article light-article">
         <h3 class="form-title">Set Range</h3>
         <form class="range-form">  
@@ -28,25 +26,38 @@
             <button class="range-update-button" type="button">UPDATE</button>
         </form>
       </article>
-
       <article class = "challenger-article  light-article">
         <p>The Current Range is <span class="min-span">1</span> to <span class="max-span">100</span></p>
         <h3 class="form-title">Challenger 1</h3>
+        
         <form class="challenger-form">
-          <label>Name</label>
-          <input class="challenger-1-name-input" type="text"></input>
-          <label>Guess</label>
-          <input class="challenger-1-guess-input" type="number"></input>
+          <div class="name-div"> 
+            <label>Name</label>
+            <input class="challenger-1-name-input" type="text"></input>
+          </div>
+          <div class="guess-div">
+            <label>Guess</label>
+            <input class="challenger-1-guess-input" type="number"></input>
+          </div>
+        </form>
         <h3 class="form-title">Challenger 2</h3>
-          <label >Name</label>
-          <input class="challenger-2-name-input" type="text"></input>
-          <label>Guess</label>
-          <input class="challenger-2-guess-input input" type="number"></input>          
+        <form class="challenger-form">
+          <div class="name-div"> 
+            <label >Name</label>
+            <input class="challenger-2-name-input" type="text"></input>
+          </div>
+          <div class="guess-div"> 
+            <label>Guess</label>
+            <input class="challenger-2-guess-input input" type="number"></input> 
+          </div>         
+        </form>
+        <div class="button-div">
           <button class ="submit-guess-button" type="button">SUBMIT GUESS</button>
           <button class="reset-game-button" type="button">RESET GAME</button>
           <button class="clear-game-button" type="button">CLEAR GAME</button>
-        </form>
+        </div>
       </article>
+
       <article class = "results-article  light-article">
         <h3 class="form-title">Latest Score</h3>
           <!-- Challenger 1 Name -->
