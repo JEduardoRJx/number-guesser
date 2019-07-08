@@ -186,12 +186,6 @@ p {
   margin-left: 5%;
 }
 
-.button-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;  
-}
-
 .submit-guess-button {
   background-color: #D0D2D3;
   border-radius: 25px;
@@ -287,7 +281,21 @@ p {
   margin-right: auto;
   margin-left: 0;
   height: 22px;
+}
 
+.button-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-guess-button,
+.reset-game-button,
+.clear-game-button {
+  width: 100%;
+}
+
+.reset-game-button {
+  margin: 10px 0px;
 }
 
 /*    div {
