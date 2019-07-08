@@ -32,10 +32,7 @@ h1 {
 
 span {
   font-weight: 700;
-<<<<<<< HEAD
-=======
 
->>>>>>> ff8859c1ac5b301255d9e0b9f41512efe714b7c0
 }
 
 .h3-header {
@@ -89,6 +86,7 @@ article {
 
 .range-article {
   background-color: white;
+}
 
 h3 {
   /*background-color: red;*/
@@ -102,6 +100,7 @@ h3 {
   font-weight: 700;
   margin: 0px;
   font-size: 16px;
+  margin:0px;
 }
 
 .range-form {
@@ -153,12 +152,6 @@ p {
   text-decoration: underline;
 }
 
-.form-title {
-<<<<<<< HEAD
-=======
-
-}
-
 .challenger-form {
   display: flex;
   flex-direction: row;
@@ -169,7 +162,6 @@ p {
 .name-div {
   width: 70%;
 }
->>>>>>> ff8859c1ac5b301255d9e0b9f41512efe714b7c0
 
 .guess-div {
   margin-left: 5%;
@@ -244,14 +236,12 @@ p {
   font-weight: bold;
 }
 
-<<<<<<< HEAD
-
 .results-article {
   background-color: white;
 }
 
 /*Playing & testing these for now*/
-@media screen and (max-width: 80px) {
+@media screen and (max-width: 800px) {
   main {
     display: flex;
     flex-direction: column;
@@ -265,7 +255,7 @@ p {
   flex-direction: column;
 }
 
-/*.max-range-div {
+.max-range-div {
   margin: 0px;
 }
 
@@ -281,7 +271,7 @@ p {
   margin-left: 0;
   height: 22px;
 
-}*/
+}
 
 /*    div {
     background-color: red;
@@ -297,5 +287,4 @@ p {
 
 .results-article {
   background-color: white;
->>>>>>> ff8859c1ac5b301255d9e0b9f41512efe714b7c0
 }
