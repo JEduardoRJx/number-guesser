@@ -17,17 +17,17 @@ header {
 }
 
 .header-section {
-  margin: 1% 0;
+  margin: 2% 0;
   text-align: center;
-  width: 350px;
+  width: 950px;
   padding: 0px;
 }
 
 h1 {
   font-weight: 300;
   color: #DD1972;
-  font-size: 40px;
-  margin: -6px;
+  font-size: 107px;
+  margin: -20px;
 }
 
 span {
@@ -39,7 +39,7 @@ span {
   color: #FFFFFF;
   font-weight: 300;
   display: flex;
-  font-size: 14px;
+  font-size: 38px;
   margin: 0px;
 }
 
@@ -47,7 +47,7 @@ span {
 .h3-header:after {
   content: "";
   flex: 1 1;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 3px solid #FFFFFF;
   margin: auto 2%;
 }
 
@@ -389,7 +389,7 @@ h4 {
 }*/
 
 /*Playing & testing these for now*/
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 950px) {
   main {
     display: flex;
     flex-direction: column;
