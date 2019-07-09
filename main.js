@@ -124,11 +124,11 @@ function displayResultsTwo() {
 };
 
 function displayCardOne() {  
-  darkSection.insertAdjacentHTML('afterbegin', `<article class="dark-article">
-    <h4> ${firstChallengerNameInput.value} vs ${secondChallengerNameInput.value} </h4>
-    <h2>${firstChallengerNameInput.value}</h2>
-    <h2>WINNER</h2>
-    <div>
+  darkSection.insertdAdjacentHTML('afterbegin', `<article class="dark-article">
+    <h4 class="card-h4"> ${firstChallengerNameInput.value} <span class="card-span">vs</span> ${secondChallengerNameInput.value} </h4>
+    <h2 class="card-winner-name">${secondChallengerNameInput.value}</h2>
+    <h2 class="card-winner-text">WINNER</h2>
+    <div class="card-div">
       <p>${4} Guesses</p>
       <p>${20} Minutes</p>
       <button class="close-card" type="button">X</button>
@@ -138,10 +138,10 @@ function displayCardOne() {
 
 function displayCardTwo() {  
   darkSection.insertAdjacentHTML('afterbegin', `<article class="dark-article">
-    <h4> ${firstChallengerNameInput.value} vs ${secondChallengerNameInput.value} </h4>
-    <h2>${secondChallengerNameInput.value}</h2>
-    <h2>WINNER</h2>
-    <div>
+    <h4 class="card-h4"> ${firstChallengerNameInput.value} <span class="card-span">vs</span> ${secondChallengerNameInput.value} </h4>
+    <h2 class="card-winner-name">${secondChallengerNameInput.value}</h2>
+    <h2 class="card-winner-text">WINNER</h2>
+    <div class="card-div">
       <p>${4} Guesses</p>
       <p>${20} Minutes</p>
       <button class="close-card" type="button">X</button>
