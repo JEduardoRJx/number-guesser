@@ -129,9 +129,9 @@ function displayCardOne() {
     <h2>${firstChallengerNameInput.value}</h2>
     <h2>WINNER</h2>
     <div>
-    <p>${4} Guesses</p>
-    <p>${20} Minutes</p>
-    <p>X</p>
+      <p>${4} Guesses</p>
+      <p>${20} Minutes</p>
+      <button class="close-card" type="button">X</button>
     </div>
     </article>`);
 }
@@ -142,9 +142,17 @@ function displayCardTwo() {
     <h2>${secondChallengerNameInput.value}</h2>
     <h2>WINNER</h2>
     <div>
-    <p>${4} Guesses</p>
-    <p>${20} Minutes</p>
-    <p>X</p>
+      <p>${4} Guesses</p>
+      <p>${20} Minutes</p>
+      <button class="close-card" type="button">X</button>
     </div>
     </article>`);
 }
+
+darkSection.addEventListener('click', function(event) { 
+  var darkArticle = document.querySelector('.dark-article') 
+  if(event.target.className === 'close-card') { 
+  //do stuff here 
+  darkArticle.remove(); 
+  } 
+});
