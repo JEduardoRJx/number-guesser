@@ -72,6 +72,7 @@ section {
 
 article {
   padding: 10px;
+  background-color: white;
 }
 
 .light-article,
@@ -84,12 +85,7 @@ article {
   border: 1px solid #ECECEC;
 }
 
-.range-article {
-  background-color: white;
-}
-
 h3 {
-  /*background-color: red;*/
   font-weight: 300;
   margin: 5px;
 }
@@ -141,7 +137,6 @@ div {
 
 /*Challengers Article*/
 .challenger-article {
-  background-color: white;
   margin: 10px 0px;
 }
 
@@ -247,9 +242,6 @@ p {
   font-weight: bold;
 }
 
-.results-article {
-  background-color: white;
-}
 
 .c1-container {
   display: flex;
@@ -264,12 +256,15 @@ p {
 .c-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 h4 {
   color: #6E6E6E;
 }
+
+/*Dark Section*/
+
 
 /*Playing & testing these for now*/
 @media screen and (max-width: 800px) {
@@ -330,10 +325,10 @@ h4 {
     background-color: green;
   }*/
 
-.results-article {
+/*.results-article {
   background-color: white;
 <<<<<<< HEAD
-}
+}*/
 
 /*Playing & testing these for now*/
 @media screen and (max-width: 750px) {
