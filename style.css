@@ -259,11 +259,69 @@ p {
   justify-content: space-around;
 }
 
+
+/*Dark Section*/
+.dark-article {
+  margin-bottom: 10px;
+  border: 1px solid #404041;
+  margin: 0 3%;
+}
+
 h4 {
   color: #6E6E6E;
 }
 
-/*Dark Section*/
+.card-h4 {
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: solid 1px #D0D2D3;
+  padding-bottom: 5px;
+}
+
+.card-span {
+  font-weight: 100;
+}
+
+.card-winner-name,
+.card-winner-text {
+  text-align: center;
+  color: #6E6E6E;
+}
+
+.card-winner-name {
+  font-size: 24px;
+  margin-bottom: auto;
+}
+
+.card-winner-text {
+  font-weight: 100;
+  margin-top: auto;
+}
+
+.card-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: solid 1px #D0D2D3;
+  padding-top: 5px;
+}
+
+.close-card {
+  background-color: #D0D2D3;
+  color: #FFFFFF;
+  border-radius: 100%;
+  border: none;
+}
+
+.close-card:hover {
+  background-color: #6E6E6E;
+}
+
+.close-card:disabled {
+  background-color: #D0D2D3;
+}
 
 
 /*Playing & testing these for now*/
