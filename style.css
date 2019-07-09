@@ -60,6 +60,11 @@ section {
   width:50%;
 }
 
+.current-range {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
 .light-section {
   background-color: #F7F7F7;
   display: flex;
@@ -95,8 +100,8 @@ h3 {
   font-weight: 700;
   margin: 0px;
   font-size: 25px;
-  margin:0px;
-  margin-top: 0px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .range-form {
@@ -242,16 +247,19 @@ p {
 
 .challenger-1-guess {
   color: #DD1972;
-  font-size: 50px;
+  font-size: 100px;
   font-weight: bold;
 }
 
 .challenger-2-guess {
   color: #DD1972;
-  font-size: 50px;
+  font-size: 100px;
   font-weight: bold;
 }
 
+.current-guess {
+  font-size: 22px;
+}
 
 .c1-container {
   display: flex;
@@ -274,6 +282,15 @@ p {
   justify-content: space-around;
 }
 
+.challenger-1-result,
+.challenger-2-result {
+  font-size: 25px;
+}
+
+.results-article {
+  padding: 5px 10px;
+}
+
 
 /*Dark Section*/
 .dark-article {
@@ -284,6 +301,8 @@ p {
 
 h4 {
   color: #6E6E6E;
+  font-size: 22px;
+  margin: 0px;
 }
 
 .card-h4 {
