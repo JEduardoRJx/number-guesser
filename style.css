@@ -246,11 +246,16 @@ p {
 .c1-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
 
 .c2-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  border-left: solid 1px #D0D2D3; 
+  width: 50%;
 }
 
 .c-container {
@@ -437,6 +442,19 @@ h4 {
 .c-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.c2-container {
+  display: flex;
+  border-top: solid 1px #D0D2D3;
+  border-left: none;
+  width: 100%;
+}
+
+.c1-container {
+  display: flex;
+  width: 100%;
 }
 
 
