@@ -19,15 +19,15 @@ header {
 .header-section {
   margin: 2% 0;
   text-align: center;
-  width: 950px;
+  width: 670px;
   padding: 0px;
 }
 
 h1 {
   font-weight: 300;
   color: #DD1972;
-  font-size: 107px;
-  margin: -20px;
+  font-size: 75px;
+  margin: -10px;
 }
 
 span {
@@ -39,7 +39,7 @@ span {
   color: #FFFFFF;
   font-weight: 300;
   display: flex;
-  font-size: 38px;
+  font-size: 25px;
   margin: 0px;
 }
 
@@ -56,7 +56,7 @@ main {
 }
 
 section {
-  padding: 10px;
+  padding: 20px;
   width:50%;
 }
 
@@ -71,7 +71,7 @@ section {
 }
 
 article {
-  padding: 10px;
+  padding: 15px;
   background-color: white;
 }
 
@@ -94,9 +94,9 @@ h3 {
   color: #606060;
   font-weight: 700;
   margin: 0px;
-  font-size: 16px;
+  font-size: 25px;
   margin:0px;
-  margin-top: 12px;
+  margin-top: 0px;
 }
 
 .range-form {
@@ -106,13 +106,15 @@ h3 {
 }
 
 input {
-  height: 25px;
+  height: 40px;
+  font-size: 20px;
+  width: 100%;
 }
 
 div {
   display: flex;
   flex-direction: column;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .max-range-div {
@@ -125,10 +127,12 @@ div {
   color: white;
   font-weight: bold;
   border: none;
-  padding: 0 5%;
+  padding: 10px;
   margin-top: auto;
   margin-left: auto;
-  height: 25px;
+  height: 100%;
+  font-size: 100%;
+  width: 22%;
 }
 
 .range-update-button:hover {
@@ -187,7 +191,9 @@ p {
   color: white;
   font-weight: bold;
   border: 1px #6E6E6E;
-  height: 25px;
+  height: 100%;
+  font-size: 100%;
+  padding: 10px;
   width: 30%;
 }
 .submit-guess-button:hover {
@@ -200,7 +206,9 @@ p {
   color: white;
   font-weight: bold;
   border: 1px #D0D2D3;
-  height: 25px;
+  height: 100%;
+  font-size: 100%;
+  padding: 10px;
   width: 30%;
   }
 
@@ -218,7 +226,9 @@ p {
   color: white;
   font-weight: bold;
   border: 1px #D0D2D3;
-  height: 25px;
+  height: 100%;
+  font-size: 100%;
+  padding: 10px;
   width: 30%;
 }
 
