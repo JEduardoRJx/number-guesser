@@ -23,6 +23,8 @@ var challengerOneResult = document.querySelector('.challenger-1-result');
 var challengerTwoResult = document.querySelector('.challenger-2-result');
 var randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
 var inputs = document.querySelectorAll('input');
+var darkArticle = document.querySelector('.dark-article');
+var darkSection = document.querySelector('.dark-section');
 
 window.onload = function() {
   offClearGameButton();
@@ -106,6 +108,7 @@ function displayResultsOne() {
     challengerOneResult.innerText = "that's too low";
   } else {
     challengerOneResult.innerText = "BOOM!";
+    displayCardOne();
   }
 };
 
@@ -116,5 +119,32 @@ function displayResultsTwo() {
     challengerTwoResult.innerText = "that's too low";
   } else {
     challengerTwoResult.innerText = "BOOM!";
+    displayCardTwo();
   }
 };
+
+function displayCardOne() {  
+  darkSection.insertAdjacentHTML('afterbegin', `<article class="dark-article">
+    <h4> ${firstChallengerNameInput.value} vs ${secondChallengerNameInput.value} </h4>
+    <h2>${firstChallengerNameInput.value}</h2>
+    <h2>WINNER</h2>
+    <div>
+    <p>${4} Guesses</p>
+    <p>${20} Minutes</p>
+    <p>X</p>
+    </div>
+    </article>`);
+}
+
+function displayCardTwo() {  
+  darkSection.insertAdjacentHTML('afterbegin', `<article class="dark-article">
+    <h4> ${firstChallengerNameInput.value} vs ${secondChallengerNameInput.value} </h4>
+    <h2>${secondChallengerNameInput.value}</h2>
+    <h2>WINNER</h2>
+    <div>
+    <p>${4} Guesses</p>
+    <p>${20} Minutes</p>
+    <p>X</p>
+    </div>
+    </article>`);
+}

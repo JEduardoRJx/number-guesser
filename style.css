@@ -264,7 +264,7 @@ p {
 .c-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 h4 {
