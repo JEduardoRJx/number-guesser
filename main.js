@@ -29,6 +29,7 @@ var darkSection = document.querySelector('.dark-section');
 window.onload = function() {
   offClearGameButton();
   offResetGameButton();
+  offSubmitGuessButton();
 };
  
 for (i=0; i < inputs.length; i++) {
@@ -54,52 +55,74 @@ function onResetGameButton() {
   resetGameButton.disabled = false;
 }
 
-rangeUpdateButton.addEventListener('click', function () {
-  var newMinRange = parseInt(minRange.value);
-  var newMaxRange = parseInt(maxRange.value);
-  minSpan.innerText = newMinRange;
-  maxSpan.innerText = newMaxRange;
-  randomNumber = Math.floor(Math.random() * (
-  parseInt(maxRange.value) - parseInt(minRange.value)) + 
-  parseInt(minRange.value));
-});
+function offSubmitGuessButton() {
+  submitGuessButton.disabled = true;
+}
 
-submitGuessButton.addEventListener('click', function () {
-  var newFirstChallengerNameInput = firstChallengerNameInput.value;
-  var newFirstChallengerGuessInput = firstChallengerGuessInput.value;
-  var newSecondChallengerNameInput = secondChallengerNameInput.value;
-  var newSecondChallengerGuessInput = secondChallengerGuessInput.value;
-  firstChallengerName.innerText = newFirstChallengerNameInput;
-  firstChallengerGuess.innerText = newFirstChallengerGuessInput;
-  secondChallengerName.innerText = newSecondChallengerNameInput;
-  secondChallengerGuess.innerText = newSecondChallengerGuessInput;
-  displayResultsOne();
-  displayResultsTwo();
-});
+function onSubmitGuessButton() {
+  submitGuessButton.disabled = false;
+}
 
-clearGameButton.addEventListener('click', function () {
-  rangeForm.reset();
-  challengerForm.reset();
-  firstChallengerName.innerText = "Challenger 1 Name";
-  firstChallengerGuess.innerText = "0";
-  secondChallengerName.innerText = "Challenger 2 Name";
-  secondChallengerGuess.innerText = "0";
-  minSpan.innerText = "1";
-  maxSpan.innerText = "100";
-  offClearGameButton();
-});
+function range() {
+  rangeUpdateButton.addEventListener('click', function () {
+    var newMinRange = parseInt(minRange.value);
+    var newMaxRange = parseInt(maxRange.value);
+    minSpan.innerText = newMinRange;
+    maxSpan.innerText = newMaxRange;
+    randomNumber = Math.floor(Math.random() * (
+    parseInt(maxRange.value) - parseInt(minRange.value)) + 
+    parseInt(minRange.value));
+    // notInRange();
+    onSubmitGuessButton();
+    submit();
+  });
+};
+range();
 
-resetGameButton.addEventListener('click', function () {
-  rangeForm.reset();
-  challengerForm.reset();
-  firstChallengerName.innerText = "Challenger 1 Name";
-  firstChallengerGuess.innerText = "0";
-  secondChallengerName.innerText = "Challeger 2 Name";
-  secondChallengerGuess.innerText = "0";
-  minSpan.innerText = "1";
-  maxSpan.innerText = "100";
-  offResetGameButton();
-});
+function submit() {
+  submitGuessButton.addEventListener('click', function () {
+    var newFirstChallengerNameInput = firstChallengerNameInput.value;
+    var newFirstChallengerGuessInput = firstChallengerGuessInput.value;
+    var newSecondChallengerNameInput = secondChallengerNameInput.value;
+    var newSecondChallengerGuessInput = secondChallengerGuessInput.value;
+    firstChallengerName.innerText = newFirstChallengerNameInput;
+    firstChallengerGuess.innerText = newFirstChallengerGuessInput;
+    secondChallengerName.innerText = newSecondChallengerNameInput;
+    secondChallengerGuess.innerText = newSecondChallengerGuessInput;
+    console.log("Submit button is working!")
+    inRange();
+  });
+}
+
+function clear() {
+  clearGameButton.addEventListener('click', function () {
+    rangeForm.reset();
+    challengerForm.reset();
+    firstChallengerName.innerText = "Challenger 1 Name";
+    firstChallengerGuess.innerText = "0";
+    secondChallengerName.innerText = "Challenger 2 Name";
+    secondChallengerGuess.innerText = "0";
+    minSpan.innerText = "1";
+    maxSpan.innerText = "100";
+    offClearGameButton();
+  });
+}
+clear();
+
+function reset() {
+  resetGameButton.addEventListener('click', function () {
+    rangeForm.reset();
+    challengerForm.reset();
+    firstChallengerName.innerText = "Challenger 1 Name";
+    firstChallengerGuess.innerText = "0";
+    secondChallengerName.innerText = "Challeger 2 Name";
+    secondChallengerGuess.innerText = "0";
+    minSpan.innerText = "1";
+    maxSpan.innerText = "100";
+    offResetGameButton();
+  });
+}
+reset();
 
 function displayResultsOne() {
   if (parseInt(firstChallengerGuessInput.value) > randomNumber) {
@@ -124,7 +147,7 @@ function displayResultsTwo() {
 };
 
 function displayCardOne() {  
-  darkSection.insertdAdjacentHTML('afterbegin', `<article class="dark-article">
+  darkSection.insertAdjacentHTML('afterbegin', `<article class="dark-article">
     <h4 class="card-h4"> ${firstChallengerNameInput.value} <span class="card-span">vs</span> ${secondChallengerNameInput.value} </h4>
     <h2 class="card-winner-name">${secondChallengerNameInput.value}</h2>
     <h2 class="card-winner-text">WINNER</h2>
@@ -156,3 +179,29 @@ darkSection.addEventListener('click', function(event) {
   darkArticle.remove(); 
   } 
 });
+
+//if user guess is outside min and max range give error code
+//bother users have to be in range to submit guess?
+//give error to one person who is not in range?
+
+//grabe numeric value of minSpan and maxSpan
+// parseInt(minSpan.innerText) and parseInt(maxSpan.innerText)
+//challener guesses
+// parseInt(firstChallengerGuessInput.value)
+//declare a function named 'notInRange'
+// displayResultsOne();
+// displayResultsTwo();
+function inRange() {
+  if(parseInt(firstChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(firstChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
+      console.log("In range User1");
+      if(parseInt(secondChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(secondChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
+        console.log("In range User 2..")
+        displayResultsOne();
+        displayResultsTwo();
+      } else {
+        console.log("Not in range User 2..")
+      }
+  } else {
+    console.log("Not in range User1")
+  }
+}
