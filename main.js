@@ -25,13 +25,42 @@ var randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
 var inputs = document.querySelectorAll('input');
 var darkArticle = document.querySelector('.dark-article');
 var darkSection = document.querySelector('.dark-section');
+var errorIconOne = document.querySelector('.error-icon-1');
+var errorIconTwo = document.querySelector('.error-icon-2');
+var errorIconThree = document.querySelector('.error-icon-3');
+var errorIconFour= document.querySelector('.error-icon-4');
+var errorIconFive = document.querySelector('.error-icon-5');
+var errorMessageOne = document.querySelector('.error-message-1');
+var errorMessageTwo = document.querySelector('.error-message-2');
+var errorMessageThree = document.querySelector('.error-message-3');
+var errorMessageFour = document.querySelector('.error-message-4');
+var errorMessageFive = document.querySelector('.error-message-5');
+var challengerForm2 = document.querySelector('#challenger-form-2');
 
 window.onload = function() {
   offClearGameButton();
   offResetGameButton();
   offSubmitGuessButton();
+  hideErrors();
 };
- 
+
+ function hideErrors() {
+  errorMessageOne.hidden = true;
+  errorMessageTwo.hidden = true;
+  errorMessageThree.hidden = true;
+  errorMessageFour.hidden = true;
+  errorMessageFive.hidden = true;
+  errorIconOne.hidden = true;
+  errorIconTwo.hidden = true;
+  errorIconThree.hidden = true;
+  errorIconFour.hidden = true;
+  errorIconFive.hidden = true;
+  firstChallengerGuessInput.style.border = "1px solid #ECECEC";
+  secondChallengerGuessInput.style.border = "1px solid #ECECEC";
+  firstChallengerNameInput.style.border = "1px solid #ECECEC";
+  secondChallengerNameInput.style.border = "1px solid #ECECEC";
+};
+
 for (i=0; i < inputs.length; i++) {
   inputs[i].addEventListener('keyup', function () {
   onClearGameButton();
@@ -65,6 +94,7 @@ function onSubmitGuessButton() {
 
 function range() {
   rangeUpdateButton.addEventListener('click', function () {
+    if (parseInt(minRange.value) < parseInt(maxRange.value) && parseInt(maxRange.value) > parseInt(minRange.value)) {
     var newMinRange = parseInt(minRange.value);
     var newMaxRange = parseInt(maxRange.value);
     minSpan.innerText = newMinRange;
@@ -72,25 +102,64 @@ function range() {
     randomNumber = Math.floor(Math.random() * (
     parseInt(maxRange.value) - parseInt(minRange.value)) + 
     parseInt(minRange.value));
-    // notInRange();
-    onSubmitGuessButton();
-    submit();
+    onSubmitGuessButton(); 
+    errorMessageOne.hidden = true;
+    errorIconOne.hidden = true;
+    minRange.style.border = "1px solid #ECECEC";
+    maxRange.style.border = "1px solid #ECECEC";
+    } else if (minRange.value === "" || maxRange.value === "") {
+         errorMessageOne.hidden = false;
+         errorIconOne.hidden = false;
+         minRange.style.border = "2px solid #DD1972"
+         maxRange.style.border = "2px solid #DD1972"
+    } else {
+         errorMessageOne.hidden = false;
+         errorIconOne.hidden = false;
+         minRange.style.border = "2px solid #DD1972"
+         maxRange.style.border = "2px solid #DD1972"
+    }
   });
+
 };
+
 range();
+
+submit();
 
 function submit() {
   submitGuessButton.addEventListener('click', function () {
-    var newFirstChallengerNameInput = firstChallengerNameInput.value;
-    var newFirstChallengerGuessInput = firstChallengerGuessInput.value;
-    var newSecondChallengerNameInput = secondChallengerNameInput.value;
-    var newSecondChallengerGuessInput = secondChallengerGuessInput.value;
-    firstChallengerName.innerText = newFirstChallengerNameInput;
-    firstChallengerGuess.innerText = newFirstChallengerGuessInput;
-    secondChallengerName.innerText = newSecondChallengerNameInput;
-    secondChallengerGuess.innerText = newSecondChallengerGuessInput;
-    console.log("Submit button is working!")
-    inRange();
+    if (isNaN(parseInt(firstChallengerGuessInput.value)) === true || firstChallengerGuessInput.value === "") {
+        errorMessageTwo.hidden = false;
+        errorIconTwo.hidden = false;
+        firstChallengerGuessInput.style.border = "2px solid #DD1972"
+    } else if (isNaN(parseInt(secondChallengerGuessInput.value)) === true || secondChallengerGuessInput.value === "") {
+        errorMessageThree.hidden = false;
+        errorIconThree.hidden = false;
+        secondChallengerGuessInput.style.border = "2px solid #DD1972"
+    } else if (firstChallengerNameInput.value === "") {
+        errorMessageFour.hidden = false;
+        errorIconFour.hidden = false;
+        firstChallengerNameInput.style.border = "2px solid #DD1972"
+    } else if (secondChallengerNameInput.value === "") {
+        errorMessageFive.hidden = false;
+        errorIconFive.hidden = false;
+        secondChallengerNameInput.style.border = "2px solid #DD1972"
+    } else {
+        console.log("Submit button is working!")
+        inRange();
+        errorMessageTwo.hidden = true;
+        errorIconTwo.hidden = true;
+        firstChallengerGuessInput.style.border = "1px solid #ECECEC";
+        errorMessageThree.hidden = true;
+        errorIconThree.hidden = true;
+        secondChallengerGuessInput.style.border = "1px solid #ECECEC";
+        errorMessageFour.hidden = true;
+        errorIconFour.hidden = true;
+        firstChallengerNameInput.style.border = "1px solid #ECECEC";
+        errorMessageFive.hidden = true;
+        errorIconFive.hidden = true;
+        secondChallengerNameInput.style.border = "1px solid #ECECEC";
+    }
   });
 }
 
@@ -98,13 +167,15 @@ function clear() {
   clearGameButton.addEventListener('click', function () {
     rangeForm.reset();
     challengerForm.reset();
+    challengerForm2.reset();
     firstChallengerName.innerText = "Challenger 1 Name";
-    firstChallengerGuess.innerText = "0";
+    firstChallengerGuess.innerText = "?";
     secondChallengerName.innerText = "Challenger 2 Name";
-    secondChallengerGuess.innerText = "0";
+    secondChallengerGuess.innerText = "?";
     minSpan.innerText = "1";
     maxSpan.innerText = "100";
     offClearGameButton();
+    hideErrors();
   });
 }
 clear();
@@ -113,18 +184,24 @@ function reset() {
   resetGameButton.addEventListener('click', function () {
     rangeForm.reset();
     challengerForm.reset();
+    challengerForm2.reset();
     firstChallengerName.innerText = "Challenger 1 Name";
-    firstChallengerGuess.innerText = "0";
-    secondChallengerName.innerText = "Challeger 2 Name";
-    secondChallengerGuess.innerText = "0";
+    firstChallengerGuess.innerText = "?";
+    secondChallengerName.innerText = "Challenger 2 Name";
+    secondChallengerGuess.innerText = "?";
     minSpan.innerText = "1";
     maxSpan.innerText = "100";
     offResetGameButton();
+    hideErrors();
   });
 }
 reset();
 
 function displayResultsOne() {
+  var newFirstChallengerNameInput = firstChallengerNameInput.value;
+  var newFirstChallengerGuessInput = firstChallengerGuessInput.value;
+  firstChallengerName.innerText = newFirstChallengerNameInput;
+  firstChallengerGuess.innerText = newFirstChallengerGuessInput;
   if (parseInt(firstChallengerGuessInput.value) > randomNumber) {
     challengerOneResult.innerText = "that's too high";
   } else if (parseInt(firstChallengerGuessInput.value) < randomNumber) {
@@ -136,6 +213,10 @@ function displayResultsOne() {
 };
 
 function displayResultsTwo() {
+  var newSecondChallengerNameInput = secondChallengerNameInput.value;
+  var newSecondChallengerGuessInput = secondChallengerGuessInput.value;
+  secondChallengerName.innerText = newSecondChallengerNameInput;
+  secondChallengerGuess.innerText = newSecondChallengerGuessInput;
   if (parseInt(secondChallengerGuessInput.value) > randomNumber) {
     challengerTwoResult.innerText = "that's too high";
   } else if (parseInt(secondChallengerGuessInput.value) < randomNumber) {
@@ -149,7 +230,7 @@ function displayResultsTwo() {
 function displayCardOne() {  
   darkSection.insertAdjacentHTML('afterbegin', `<article class="dark-article">
     <h4 class="card-h4"> ${firstChallengerNameInput.value} <span class="card-span">vs</span> ${secondChallengerNameInput.value} </h4>
-    <h2 class="card-winner-name">${secondChallengerNameInput.value}</h2>
+    <h2 class="card-winner-name">${firstChallengerNameInput.value}</h2>
     <h2 class="card-winner-text">WINNER</h2>
     <div class="card-div">
       <p>${4} Guesses</p>
@@ -180,28 +261,30 @@ darkSection.addEventListener('click', function(event) {
   } 
 });
 
-//if user guess is outside min and max range give error code
-//bother users have to be in range to submit guess?
-//give error to one person who is not in range?
-
-//grabe numeric value of minSpan and maxSpan
-// parseInt(minSpan.innerText) and parseInt(maxSpan.innerText)
-//challener guesses
-// parseInt(firstChallengerGuessInput.value)
-//declare a function named 'notInRange'
-// displayResultsOne();
-// displayResultsTwo();
 function inRange() {
   if(parseInt(firstChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(firstChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
       console.log("In range User1");
-      if(parseInt(secondChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(secondChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
-        console.log("In range User 2..")
-        displayResultsOne();
-        displayResultsTwo();
-      } else {
-        console.log("Not in range User 2..")
-      }
+      errorMessageTwo.hidden = true;
+      errorIconTwo.hidden = true;
+      firstChallengerGuessInput.style.border = "1px solid #ECECEC";
+      displayResultsOne();
   } else {
-    console.log("Not in range User1")
+      errorMessageTwo.hidden = false;
+      errorIconTwo.hidden = false;
+      firstChallengerGuessInput.style.border = "2px solid #DD1972"
+      console.log("Not in range User1")
+    }
+  if(parseInt(secondChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(secondChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
+        console.log("In range User 2..")
+        errorMessageThree.hidden = true;
+        errorIconThree.hidden = true;
+        secondChallengerGuessInput.style.border = "1px solid #ECECEC";
+        displayResultsTwo();
+    } else {
+        errorMessageThree.hidden = false;
+        errorIconThree.hidden = false;
+        secondChallengerGuessInput.style.border = "2px solid #DD1972"
+        console.log("Not in range User 2..")
   }
 }
+

@@ -144,6 +144,81 @@ div {
   background-color: #6E6E6E;
 }
 
+.error-message-1 {
+  font-size: 20px;
+  color: #DD1972;
+  margin-left: 5px;
+}
+
+.error-message-2 {
+  font-size: 20px;
+  color: #DD1972;
+  margin-left: 5px;
+}
+
+.error-message-3 {
+  font-size: 20px;
+  color: #DD1972;
+  margin-left: 5px;
+}
+
+.error-message-4 {
+  font-size: 20px;
+  color: #DD1972;
+  margin-left: 5px;
+}
+
+.error-message-5 {
+  font-size: 20px;
+  color: #DD1972;
+  margin-left: 5px;
+}
+
+.error-icon-1 {
+  margin-top: 4px;
+}
+
+.error-icon-2 {
+  margin-top: 4px;
+}
+
+.error-icon-3 {
+  margin-top: 4px;
+}
+
+.error-icon-4 {
+  margin-top: 4px;
+}
+
+.error-icon-4 {
+  margin-top: 4px;
+}
+
+.error-container-1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.error-container-2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.error-container-3 {
+  display: flex;
+  flex-direction: row;
+}
+
+.error-container-4 {
+  display: flex;
+  flex-direction: row;
+}
+
+.error-container-5 {
+  display: flex;
+  flex-direction: row;
+}
+
 /*Challengers Article*/
 .challenger-article {
   margin: 10px 0px;
