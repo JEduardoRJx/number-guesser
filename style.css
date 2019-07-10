@@ -144,76 +144,28 @@ div {
   background-color: #6E6E6E;
 }
 
-.error-message-1 {
-  font-size: 20px;
-  color: #DD1972;
-  margin-left: 5px;
-}
-
-.error-message-2 {
-  font-size: 20px;
-  color: #DD1972;
-  margin-left: 5px;
-}
-
-.error-message-3 {
-  font-size: 20px;
-  color: #DD1972;
-  margin-left: 5px;
-}
-
-.error-message-4 {
-  font-size: 20px;
-  color: #DD1972;
-  margin-left: 5px;
-}
-
+.error-message-1, 
+.error-message-2,
+.error-message-3,
+.error-message-4,
 .error-message-5 {
   font-size: 20px;
   color: #DD1972;
   margin-left: 5px;
 }
 
-.error-icon-1 {
+.error-icon-1,
+.error-icon-2,
+.error-icon-3,
+.error-icon-4,
+.error-icon-5 {
   margin-top: 4px;
 }
 
-.error-icon-2 {
-  margin-top: 4px;
-}
-
-.error-icon-3 {
-  margin-top: 4px;
-}
-
-.error-icon-4 {
-  margin-top: 4px;
-}
-
-.error-icon-4 {
-  margin-top: 4px;
-}
-
-.error-container-1 {
-  display: flex;
-  flex-direction: row;
-}
-
-.error-container-2 {
-  display: flex;
-  flex-direction: row;
-}
-
-.error-container-3 {
-  display: flex;
-  flex-direction: row;
-}
-
-.error-container-4 {
-  display: flex;
-  flex-direction: row;
-}
-
+.error-container-1,
+.error-container-2,
+.error-container-3,
+.error-container-4,
 .error-container-5 {
   display: flex;
   flex-direction: row;
@@ -468,7 +420,7 @@ h4 {
     margin-top: 3%;
     margin-right: auto;
     margin-left: 0;
-}
+  }
 
 }
 
@@ -517,7 +469,6 @@ h4 {
 
 /*.results-article {
   background-color: white;
-<<<<<<< HEAD
 }*/
 
 /*Playing & testing these for now*/
@@ -584,7 +535,6 @@ h4 {
   width: 100%;
 }*/
 
-
 /*    div {
     background-color: red;
     display:flex;
@@ -596,6 +546,4 @@ h4 {
     background-color: green;
   }*/
 /*}*/
-=======
-  }
->>>>>>> a60d1b0ac656abd957089e242599373c07f37730
+

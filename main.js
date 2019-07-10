@@ -3,8 +3,6 @@ var maxRange = document.querySelector('.max-range');
 var rangeUpdateButton = document.querySelector('.range-update-button');
 var minSpan = document.querySelector('.min-span');
 var maxSpan = document.querySelector('.max-span');
-var newMinRangeTest = parseInt(minRange.value);
-var newMaxRangeTest = parseInt(maxRange.value);
 var firstChallengerNameInput = document.querySelector('.challenger-1-name-input');
 var firstChallengerGuessInput = document.querySelector('.challenger-1-guess-input');
 var secondChallengerNameInput = document.querySelector('.challenger-2-name-input');
@@ -95,28 +93,28 @@ function onSubmitGuessButton() {
 function range() {
   rangeUpdateButton.addEventListener('click', function () {
     if (parseInt(minRange.value) < parseInt(maxRange.value) && parseInt(maxRange.value) > parseInt(minRange.value)) {
-    var newMinRange = parseInt(minRange.value);
-    var newMaxRange = parseInt(maxRange.value);
-    minSpan.innerText = newMinRange;
-    maxSpan.innerText = newMaxRange;
-    randomNumber = Math.floor(Math.random() * (
-    parseInt(maxRange.value) - parseInt(minRange.value)) + 
-    parseInt(minRange.value));
-    onSubmitGuessButton(); 
-    errorMessageOne.hidden = true;
-    errorIconOne.hidden = true;
-    minRange.style.border = "1px solid #ECECEC";
-    maxRange.style.border = "1px solid #ECECEC";
+      var newMinRange = parseInt(minRange.value);
+      var newMaxRange = parseInt(maxRange.value);
+      minSpan.innerText = newMinRange;
+      maxSpan.innerText = newMaxRange;
+      randomNumber = Math.floor(Math.random() * (
+      parseInt(maxRange.value) - parseInt(minRange.value)) + 
+      parseInt(minRange.value));
+      onSubmitGuessButton(); 
+      errorMessageOne.hidden = true;
+      errorIconOne.hidden = true;
+      minRange.style.border = "1px solid #ECECEC";
+      maxRange.style.border = "1px solid #ECECEC";
     } else if (minRange.value === "" || maxRange.value === "") {
-         errorMessageOne.hidden = false;
-         errorIconOne.hidden = false;
-         minRange.style.border = "2px solid #DD1972"
-         maxRange.style.border = "2px solid #DD1972"
+       errorMessageOne.hidden = false;
+       errorIconOne.hidden = false;
+       minRange.style.border = "2px solid #DD1972";
+       maxRange.style.border = "2px solid #DD1972";
     } else {
-         errorMessageOne.hidden = false;
-         errorIconOne.hidden = false;
-         minRange.style.border = "2px solid #DD1972"
-         maxRange.style.border = "2px solid #DD1972"
+       errorMessageOne.hidden = false;
+       errorIconOne.hidden = false;
+       minRange.style.border = "2px solid #DD1972";
+       maxRange.style.border = "2px solid #DD1972";
     }
   });
 
@@ -127,39 +125,44 @@ range();
 submit();
 
 function submit() {
-  submitGuessButton.addEventListener('click', function () {
+  submitGuessButton.addEventListener('click', function () { 
     if (isNaN(parseInt(firstChallengerGuessInput.value)) === true || firstChallengerGuessInput.value === "") {
         errorMessageTwo.hidden = false;
         errorIconTwo.hidden = false;
-        firstChallengerGuessInput.style.border = "2px solid #DD1972"
-    } else if (isNaN(parseInt(secondChallengerGuessInput.value)) === true || secondChallengerGuessInput.value === "") {
-        errorMessageThree.hidden = false;
-        errorIconThree.hidden = false;
-        secondChallengerGuessInput.style.border = "2px solid #DD1972"
-    } else if (firstChallengerNameInput.value === "") {
-        errorMessageFour.hidden = false;
-        errorIconFour.hidden = false;
-        firstChallengerNameInput.style.border = "2px solid #DD1972"
-    } else if (secondChallengerNameInput.value === "") {
-        errorMessageFive.hidden = false;
-        errorIconFive.hidden = false;
-        secondChallengerNameInput.style.border = "2px solid #DD1972"
+        firstChallengerGuessInput.style.border = "2px solid #DD1972";
     } else {
-        console.log("Submit button is working!")
-        inRange();
         errorMessageTwo.hidden = true;
         errorIconTwo.hidden = true;
-        firstChallengerGuessInput.style.border = "1px solid #ECECEC";
+        firstChallengerNameInput.style.border = "1px solid #ECECEC";
+    }
+    if (isNaN(parseInt(secondChallengerGuessInput.value)) === true || secondChallengerGuessInput.value === "") {
+        errorMessageThree.hidden = false;
+        errorIconThree.hidden = false;
+        secondChallengerGuessInput.style.border = "2px solid #DD1972";
+    } else {  
         errorMessageThree.hidden = true;
         errorIconThree.hidden = true;
         secondChallengerGuessInput.style.border = "1px solid #ECECEC";
+    }
+    if (firstChallengerNameInput.value === "") {
+        errorMessageFour.hidden = false;
+        errorIconFour.hidden = false;
+        firstChallengerNameInput.style.border = "2px solid #DD1972";
+    } else {
         errorMessageFour.hidden = true;
         errorIconFour.hidden = true;
         firstChallengerNameInput.style.border = "1px solid #ECECEC";
+    }
+    if (secondChallengerNameInput.value === "") {
+        errorMessageFive.hidden = false;
+        errorIconFive.hidden = false;
+        secondChallengerNameInput.style.border = "2px solid #DD1972";
+    } else {
         errorMessageFive.hidden = true;
         errorIconFive.hidden = true;
-        secondChallengerNameInput.style.border = "1px solid #ECECEC";
+        secondChallengerNameInput.style.border = "1px solid #ECECEC";   
     }
+      inRange();
   });
 }
 
@@ -208,7 +211,7 @@ function displayResultsOne() {
     challengerOneResult.innerText = "that's too low";
   } else {
     challengerOneResult.innerText = "BOOM!";
-    displayCardOne();
+    displayCardOne(firstChallengerNameInput.value, secondChallengerNameInput.value);
   }
 };
 
@@ -223,14 +226,14 @@ function displayResultsTwo() {
     challengerTwoResult.innerText = "that's too low";
   } else {
     challengerTwoResult.innerText = "BOOM!";
-    displayCardTwo();
+    displayCardTwo(firstChallengerNameInput.value, secondChallengerNameInput.value);
   }
 };
 
-function displayCardOne() {  
+function displayCardOne(firstName, secondName) {  
   darkSection.insertAdjacentHTML('afterbegin', `<article class="dark-article">
-    <h4 class="card-h4"> ${firstChallengerNameInput.value} <span class="card-span">vs</span> ${secondChallengerNameInput.value} </h4>
-    <h2 class="card-winner-name">${firstChallengerNameInput.value}</h2>
+    <h4 class="card-h4"> ${firstName} <span class="card-span">vs</span> ${secondName} </h4>
+    <h2 class="card-winner-name">${firstName}</h2>
     <h2 class="card-winner-text">WINNER</h2>
     <div class="card-div">
       <p>${4} Guesses</p>
@@ -240,10 +243,10 @@ function displayCardOne() {
     </article>`);
 }
 
-function displayCardTwo() {  
+function displayCardTwo(firstName, secondName) {  
   darkSection.insertAdjacentHTML('afterbegin', `<article class="dark-article">
-    <h4 class="card-h4"> ${firstChallengerNameInput.value} <span class="card-span">vs</span> ${secondChallengerNameInput.value} </h4>
-    <h2 class="card-winner-name">${secondChallengerNameInput.value}</h2>
+    <h4 class="card-h4"> ${firstName} <span class="card-span">vs</span> ${secondName} </h4>
+    <h2 class="card-winner-name">${secondName}</h2>
     <h2 class="card-winner-text">WINNER</h2>
     <div class="card-div">
       <p>${4} Guesses</p>
@@ -256,7 +259,6 @@ function displayCardTwo() {
 darkSection.addEventListener('click', function(event) { 
   var darkArticle = document.querySelector('.dark-article') 
   if(event.target.className === 'close-card') { 
-  //do stuff here 
   darkArticle.remove(); 
   } 
 });
@@ -272,7 +274,6 @@ function inRange() {
       errorMessageTwo.hidden = false;
       errorIconTwo.hidden = false;
       firstChallengerGuessInput.style.border = "2px solid #DD1972"
-      console.log("Not in range User1")
     }
   if(parseInt(secondChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(secondChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
         console.log("In range User 2..")
@@ -284,7 +285,6 @@ function inRange() {
         errorMessageThree.hidden = false;
         errorIconThree.hidden = false;
         secondChallengerGuessInput.style.border = "2px solid #DD1972"
-        console.log("Not in range User 2..")
   }
 }
 
