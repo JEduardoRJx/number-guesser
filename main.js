@@ -124,7 +124,6 @@ submit();
 
 function inRange() {
   if(parseInt(firstChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(firstChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
-    console.log("In range User1");
     errorMessageTwo.hidden = true;
     errorIconTwo.hidden = true;
     firstChallengerGuessInput.style.border = "1px solid #ECECEC";
@@ -135,7 +134,6 @@ function inRange() {
     firstChallengerGuessInput.style.border = "2px solid #DD1972";
   }
   if (parseInt(secondChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(secondChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
-    console.log("In range User 2..")
     errorMessageThree.hidden = true;
     errorIconThree.hidden = true;
     secondChallengerGuessInput.style.border = "1px solid #ECECEC";
