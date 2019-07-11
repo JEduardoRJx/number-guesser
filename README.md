@@ -11,8 +11,12 @@ The Number Guesser page takes two values from the user, a minimum and a maximum 
 ## Screen Shots
 
 ### Comp
+![comp_desktop](https://user-images.githubusercontent.com/48504854/61016528-27612d00-a34d-11e9-95cf-838adfe06681.jpg)
+![comp_mobile](https://user-images.githubusercontent.com/48504854/61016536-2d570e00-a34d-11e9-8fc4-ee0facc52ba1.jpg)
 
 ### Build
+![Build_Desktop](https://user-images.githubusercontent.com/48504854/61016511-1ca69800-a34d-11e9-9ced-513d00de9093.png)
+![Build_Mobile](https://user-images.githubusercontent.com/48504854/61016519-23350f80-a34d-11e9-974c-b474d45c5b00.png)
 
 ## Live Page
 
