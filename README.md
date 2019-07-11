@@ -8,6 +8,10 @@ Number Guesser is the first partner project assigned in Module 1 at Turing. This
 
 The Number Guesser page takes two values from the user, a minimum and a maximum range. Up to two users can then enter their names and try to guess the random number that falls between the entered range values. The user names and results are printed on the bottom of the page along with hints that tells the user if their guess was higher or lower than the random number. Once a user guesses the correct value the page will load a card that displays the names of the two users competing and the name of the winner. The range values can be reset and users can play as many times as they would like adding more result cards with each correct guess.
 
+## Live Page
+
+[Here](https://jeduardorjx.github.io/number-guesser/) is a link to our Number Guesser web page!
+
 ## Screen Shots
 
 ### Comp
@@ -17,10 +21,6 @@ The Number Guesser page takes two values from the user, a minimum and a maximum 
 ### Build
 ![Build_Desktop](https://user-images.githubusercontent.com/48504854/61016511-1ca69800-a34d-11e9-9ced-513d00de9093.png)
 ![Build_Mobile](https://user-images.githubusercontent.com/48504854/61016519-23350f80-a34d-11e9-974c-b474d45c5b00.png)
-
-## Live Page
-
-[Here](https://jeduardorjx.github.io/number-guesser/) is a link to our Number Guesser web page!
 
 ## Contributors
 
