@@ -68,31 +68,30 @@ for (i=0; i < inputs.length; i++) {
 
 function offClearGameButton() { 
   clearGameButton.disabled = true;
-}
+};
 
 function onClearGameButton() {
   clearGameButton.disabled = false;
-}
+};
 
 function offResetGameButton() {
   resetGameButton.disabled = true;
-}
+};
 
 function onResetGameButton() {
   resetGameButton.disabled = false;
-}
+};
 
 function offSubmitGuessButton() {
   submitGuessButton.disabled = true;
-}
+};
 
 function onSubmitGuessButton() {
   submitGuessButton.disabled = false;
-}
+};
 
-function range() {
-  rangeUpdateButton.addEventListener('click', function () {
-    if (parseInt(minRange.value) < parseInt(maxRange.value) && parseInt(maxRange.value) > parseInt(minRange.value)) {
+function handleRangeUpdate() {
+  if (parseInt(minRange.value) < parseInt(maxRange.value) && parseInt(maxRange.value) > parseInt(minRange.value)) {
       var newMinRange = parseInt(minRange.value);
       var newMaxRange = parseInt(maxRange.value);
       minSpan.innerText = newMinRange;
@@ -105,99 +104,134 @@ function range() {
       errorIconOne.hidden = true;
       minRange.style.border = "1px solid #ECECEC";
       maxRange.style.border = "1px solid #ECECEC";
-    } else if (minRange.value === "" || maxRange.value === "") {
-       errorMessageOne.hidden = false;
-       errorIconOne.hidden = false;
-       minRange.style.border = "2px solid #DD1972";
-       maxRange.style.border = "2px solid #DD1972";
-    } else {
-       errorMessageOne.hidden = false;
-       errorIconOne.hidden = false;
-       minRange.style.border = "2px solid #DD1972";
-       maxRange.style.border = "2px solid #DD1972";
-    }
-  });
+  } else if (minRange.value === "" || maxRange.value === "") {
+      errorMessageOne.hidden = false;
+      errorIconOne.hidden = false;
+      minRange.style.border = "2px solid #DD1972";
+      maxRange.style.border = "2px solid #DD1972";
+  } else {
+      errorMessageOne.hidden = false;
+      errorIconOne.hidden = false;
+      minRange.style.border = "2px solid #DD1972";
+      maxRange.style.border = "2px solid #DD1972";
+  };
+};
 
+function range() {
+  rangeUpdateButton.addEventListener('click', handleRangeUpdate);
 };
 
 range();
 
 submit();
 
+function inRange() {
+  if(parseInt(firstChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(firstChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
+      console.log("In range User1");
+      errorMessageTwo.hidden = true;
+      errorIconTwo.hidden = true;
+      firstChallengerGuessInput.style.border = "1px solid #ECECEC";
+      displayResultsOne();
+  } else {
+      errorMessageTwo.hidden = false;
+      errorIconTwo.hidden = false;
+      firstChallengerGuessInput.style.border = "2px solid #DD1972"
+  }
+  if (parseInt(secondChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(secondChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
+      console.log("In range User 2..")
+      errorMessageThree.hidden = true;
+      errorIconThree.hidden = true;
+      secondChallengerGuessInput.style.border = "1px solid #ECECEC";
+      displayResultsTwo();
+  } else {
+      errorMessageThree.hidden = false;
+      errorIconThree.hidden = false;
+      secondChallengerGuessInput.style.border = "2px solid #DD1972"
+  };
+};
+
+function handleSubmit() {
+  if (isNaN(parseInt(firstChallengerGuessInput.value)) === true || firstChallengerGuessInput.value === "") {
+    errorMessageTwo.hidden = false;
+    errorIconTwo.hidden = false;
+    firstChallengerGuessInput.style.border = "2px solid #DD1972";
+  } else {
+    errorMessageTwo.hidden = true;
+    errorIconTwo.hidden = true;
+    firstChallengerNameInput.style.border = "1px solid #ECECEC";
+  };
+  if (isNaN(parseInt(secondChallengerGuessInput.value)) === true || secondChallengerGuessInput.value === "") {
+    errorMessageThree.hidden = false;
+    errorIconThree.hidden = false;
+    secondChallengerGuessInput.style.border = "2px solid #DD1972";
+  } else {  
+    errorMessageThree.hidden = true;
+    errorIconThree.hidden = true;
+    secondChallengerGuessInput.style.border = "1px solid #ECECEC";
+  };
+  if (firstChallengerNameInput.value === "") {
+    errorMessageFour.hidden = false;
+    errorIconFour.hidden = false;
+    firstChallengerNameInput.style.border = "2px solid #DD1972";
+  } else {
+    errorMessageFour.hidden = true;
+    errorIconFour.hidden = true;
+    firstChallengerNameInput.style.border = "1px solid #ECECEC";
+  };
+  if (secondChallengerNameInput.value === "") {
+    errorMessageFive.hidden = false;
+    errorIconFive.hidden = false;
+    secondChallengerNameInput.style.border = "2px solid #DD1972";
+  } else {
+    errorMessageFive.hidden = true;
+    errorIconFive.hidden = true;
+    secondChallengerNameInput.style.border = "1px solid #ECECEC";   
+  };
+    inRange();
+};
+
 function submit() {
-  submitGuessButton.addEventListener('click', function () { 
-    if (isNaN(parseInt(firstChallengerGuessInput.value)) === true || firstChallengerGuessInput.value === "") {
-        errorMessageTwo.hidden = false;
-        errorIconTwo.hidden = false;
-        firstChallengerGuessInput.style.border = "2px solid #DD1972";
-    } else {
-        errorMessageTwo.hidden = true;
-        errorIconTwo.hidden = true;
-        firstChallengerNameInput.style.border = "1px solid #ECECEC";
-    }
-    if (isNaN(parseInt(secondChallengerGuessInput.value)) === true || secondChallengerGuessInput.value === "") {
-        errorMessageThree.hidden = false;
-        errorIconThree.hidden = false;
-        secondChallengerGuessInput.style.border = "2px solid #DD1972";
-    } else {  
-        errorMessageThree.hidden = true;
-        errorIconThree.hidden = true;
-        secondChallengerGuessInput.style.border = "1px solid #ECECEC";
-    }
-    if (firstChallengerNameInput.value === "") {
-        errorMessageFour.hidden = false;
-        errorIconFour.hidden = false;
-        firstChallengerNameInput.style.border = "2px solid #DD1972";
-    } else {
-        errorMessageFour.hidden = true;
-        errorIconFour.hidden = true;
-        firstChallengerNameInput.style.border = "1px solid #ECECEC";
-    }
-    if (secondChallengerNameInput.value === "") {
-        errorMessageFive.hidden = false;
-        errorIconFive.hidden = false;
-        secondChallengerNameInput.style.border = "2px solid #DD1972";
-    } else {
-        errorMessageFive.hidden = true;
-        errorIconFive.hidden = true;
-        secondChallengerNameInput.style.border = "1px solid #ECECEC";   
-    }
-      inRange();
-  });
-}
+  submitGuessButton.addEventListener('click', handleSubmit);
+};
+
+function handleClear() {
+  rangeForm.reset();
+  challengerForm.reset();
+  challengerForm2.reset();
+  firstChallengerName.innerText = "Challenger 1 Name";
+  firstChallengerGuess.innerText = "?";
+  secondChallengerName.innerText = "Challenger 2 Name";
+  secondChallengerGuess.innerText = "?";
+  minSpan.innerText = "1";
+  maxSpan.innerText = "100";
+  offClearGameButton();
+  hideErrors();
+};
 
 function clear() {
-  clearGameButton.addEventListener('click', function () {
-    rangeForm.reset();
-    challengerForm.reset();
-    challengerForm2.reset();
-    firstChallengerName.innerText = "Challenger 1 Name";
-    firstChallengerGuess.innerText = "?";
-    secondChallengerName.innerText = "Challenger 2 Name";
-    secondChallengerGuess.innerText = "?";
-    minSpan.innerText = "1";
-    maxSpan.innerText = "100";
-    offClearGameButton();
-    hideErrors();
-  });
-}
+  clearGameButton.addEventListener('click', handleClear);
+};
+
 clear();
 
+function handleReset() {
+  rangeForm.reset();
+  challengerForm.reset();
+  challengerForm2.reset();
+  firstChallengerName.innerText = "Challenger 1 Name";
+  firstChallengerGuess.innerText = "?";
+  secondChallengerName.innerText = "Challenger 2 Name";
+  secondChallengerGuess.innerText = "?";
+  minSpan.innerText = "1";
+  maxSpan.innerText = "100";
+  offResetGameButton();
+  hideErrors();
+};
+
 function reset() {
-  resetGameButton.addEventListener('click', function () {
-    rangeForm.reset();
-    challengerForm.reset();
-    challengerForm2.reset();
-    firstChallengerName.innerText = "Challenger 1 Name";
-    firstChallengerGuess.innerText = "?";
-    secondChallengerName.innerText = "Challenger 2 Name";
-    secondChallengerGuess.innerText = "?";
-    minSpan.innerText = "1";
-    maxSpan.innerText = "100";
-    offResetGameButton();
-    hideErrors();
-  });
-}
+  resetGameButton.addEventListener('click', handleReset);
+};
+
 reset();
 
 function displayResultsOne() {
@@ -212,7 +246,7 @@ function displayResultsOne() {
   } else {
     challengerOneResult.innerText = "BOOM!";
     displayCardOne(firstChallengerNameInput.value, secondChallengerNameInput.value);
-  }
+  };
 };
 
 function displayResultsTwo() {
@@ -227,7 +261,7 @@ function displayResultsTwo() {
   } else {
     challengerTwoResult.innerText = "BOOM!";
     displayCardTwo(firstChallengerNameInput.value, secondChallengerNameInput.value);
-  }
+  };
 };
 
 function displayCardOne(firstName, secondName) {  
@@ -241,7 +275,7 @@ function displayCardOne(firstName, secondName) {
       <button class="close-card" type="button">X</button>
     </div>
     </article>`);
-}
+};
 
 function displayCardTwo(firstName, secondName) {  
   darkSection.insertAdjacentHTML('afterbegin', `<article class="dark-article">
@@ -254,37 +288,13 @@ function displayCardTwo(firstName, secondName) {
       <button class="close-card" type="button">X</button>
     </div>
     </article>`);
-}
+};
 
 darkSection.addEventListener('click', function(event) { 
   var darkArticle = document.querySelector('.dark-article') 
   if(event.target.className === 'close-card') { 
   darkArticle.remove(); 
-  } 
+  };
 });
 
-function inRange() {
-  if(parseInt(firstChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(firstChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
-      console.log("In range User1");
-      errorMessageTwo.hidden = true;
-      errorIconTwo.hidden = true;
-      firstChallengerGuessInput.style.border = "1px solid #ECECEC";
-      displayResultsOne();
-  } else {
-      errorMessageTwo.hidden = false;
-      errorIconTwo.hidden = false;
-      firstChallengerGuessInput.style.border = "2px solid #DD1972"
-    }
-  if(parseInt(secondChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(secondChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
-        console.log("In range User 2..")
-        errorMessageThree.hidden = true;
-        errorIconThree.hidden = true;
-        secondChallengerGuessInput.style.border = "1px solid #ECECEC";
-        displayResultsTwo();
-    } else {
-        errorMessageThree.hidden = false;
-        errorIconThree.hidden = false;
-        secondChallengerGuessInput.style.border = "2px solid #DD1972"
-  }
-}
 
