@@ -120,6 +120,7 @@ function range() {
 };
 
 range();
+
 submit();
 
 function inRange() {
