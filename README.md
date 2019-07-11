@@ -20,7 +20,7 @@ The Number Guesser page takes two values from the user, a minimum and a maximum 
 
 ## Live Page
 
-[Here]() is a link to our Number Guesser web page!
+[Here](https://jeduardorjx.github.io/number-guesser/) is a link to our Number Guesser web page!
 
 ## Contributors
 
