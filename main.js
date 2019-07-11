@@ -92,28 +92,26 @@ function onSubmitGuessButton() {
 
 function handleRangeUpdate() {
   if (parseInt(minRange.value) < parseInt(maxRange.value) && parseInt(maxRange.value) > parseInt(minRange.value)) {
-      var newMinRange = parseInt(minRange.value);
-      var newMaxRange = parseInt(maxRange.value);
-      minSpan.innerText = newMinRange;
-      maxSpan.innerText = newMaxRange;
-      randomNumber = Math.floor(Math.random() * (
-      parseInt(maxRange.value) - parseInt(minRange.value)) + 
-      parseInt(minRange.value));
-      onSubmitGuessButton(); 
-      errorMessageOne.hidden = true;
-      errorIconOne.hidden = true;
-      minRange.style.border = "1px solid #ECECEC";
-      maxRange.style.border = "1px solid #ECECEC";
+    var newMinRange = parseInt(minRange.value);
+    var newMaxRange = parseInt(maxRange.value);
+    minSpan.innerText = newMinRange;
+    maxSpan.innerText = newMaxRange;
+    randomNumber = Math.floor(Math.random() * (parseInt(maxRange.value) - parseInt(minRange.value)) + parseInt(minRange.value));
+    onSubmitGuessButton(); 
+    errorMessageOne.hidden = true;
+    errorIconOne.hidden = true;
+    minRange.style.border = "1px solid #ECECEC";
+    maxRange.style.border = "1px solid #ECECEC";
   } else if (minRange.value === "" || maxRange.value === "") {
-      errorMessageOne.hidden = false;
-      errorIconOne.hidden = false;
-      minRange.style.border = "2px solid #DD1972";
-      maxRange.style.border = "2px solid #DD1972";
+    errorMessageOne.hidden = false;
+    errorIconOne.hidden = false;
+    minRange.style.border = "2px solid #DD1972";
+    maxRange.style.border = "2px solid #DD1972";
   } else {
-      errorMessageOne.hidden = false;
-      errorIconOne.hidden = false;
-      minRange.style.border = "2px solid #DD1972";
-      maxRange.style.border = "2px solid #DD1972";
+    errorMessageOne.hidden = false;
+    errorIconOne.hidden = false;
+    minRange.style.border = "2px solid #DD1972";
+    maxRange.style.border = "2px solid #DD1972";
   };
 };
 
@@ -122,31 +120,30 @@ function range() {
 };
 
 range();
-
 submit();
 
 function inRange() {
   if(parseInt(firstChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(firstChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
-      console.log("In range User1");
-      errorMessageTwo.hidden = true;
-      errorIconTwo.hidden = true;
-      firstChallengerGuessInput.style.border = "1px solid #ECECEC";
-      displayResultsOne();
+    console.log("In range User1");
+    errorMessageTwo.hidden = true;
+    errorIconTwo.hidden = true;
+    firstChallengerGuessInput.style.border = "1px solid #ECECEC";
+    displayResultsOne();
   } else {
-      errorMessageTwo.hidden = false;
-      errorIconTwo.hidden = false;
-      firstChallengerGuessInput.style.border = "2px solid #DD1972"
+    errorMessageTwo.hidden = false;
+    errorIconTwo.hidden = false;
+    firstChallengerGuessInput.style.border = "2px solid #DD1972";
   }
   if (parseInt(secondChallengerGuessInput.value) >= parseInt(minSpan.innerText) && parseInt(secondChallengerGuessInput.value) <= parseInt(maxSpan.innerText)) {
-      console.log("In range User 2..")
-      errorMessageThree.hidden = true;
-      errorIconThree.hidden = true;
-      secondChallengerGuessInput.style.border = "1px solid #ECECEC";
-      displayResultsTwo();
+    console.log("In range User 2..")
+    errorMessageThree.hidden = true;
+    errorIconThree.hidden = true;
+    secondChallengerGuessInput.style.border = "1px solid #ECECEC";
+    displayResultsTwo();
   } else {
-      errorMessageThree.hidden = false;
-      errorIconThree.hidden = false;
-      secondChallengerGuessInput.style.border = "2px solid #DD1972"
+    errorMessageThree.hidden = false;
+    errorIconThree.hidden = false;
+    secondChallengerGuessInput.style.border = "2px solid #DD1972"
   };
 };
 
@@ -293,8 +290,6 @@ function displayCardTwo(firstName, secondName) {
 darkSection.addEventListener('click', function(event) { 
   var darkArticle = document.querySelector('.dark-article') 
   if(event.target.className === 'close-card') { 
-  darkArticle.remove(); 
+    darkArticle.remove(); 
   };
 });
-
-
